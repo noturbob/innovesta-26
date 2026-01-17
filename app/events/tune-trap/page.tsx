@@ -14,10 +14,10 @@ import {
   Phone, 
   Trophy, 
   Music, // Changed to Music Icon
-  Mic2   // Added Mic icon for "Singing" context
 } from "lucide-react";
 import { motion } from "framer-motion";
 import StarBackground from "@/components/sections/StarBackground";
+import InfoCard from "@/components/events/InfoCard";
 
 export default function TuneTrapPage() {
   return (
@@ -185,16 +185,5 @@ export default function TuneTrapPage() {
         </div>
       </div>
     </main>
-  );
-}
-
-// Simple Helper Component for the Info Grid
-function InfoCard({ icon: Icon, label, value }: any) {
-  return (
-    <div className="bg-white/5 border border-white/10 p-4 rounded-xl flex flex-col items-center text-center hover:bg-white/10 transition-colors">
-      <Icon className="w-6 h-6 text-cyan-400 mb-2" />
-      <span className="text-xs text-gray-400 uppercase tracking-wider">{label}</span>
-      <span className="font-bold text-white">{value}</span>
-    </div>
   );
 }

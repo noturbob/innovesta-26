@@ -13,11 +13,11 @@ import {
   CheckCircle2, 
   Phone, 
   Trophy, 
-  Sparkles, // Using Sparkles for Brand Revival
-  Palette
+  Sparkles,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import StarBackground from "@/components/sections/StarBackground";
+import InfoCard from "@/components/events/InfoCard";
 
 export default function BrandRevivalPage() {
   return (
@@ -83,7 +83,7 @@ export default function BrandRevivalPage() {
                   <Trophy className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400" /> Event Structure
                 </h3>
                 <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                  Teams will be assigned a "dead" or struggling brand (e.g., Nokia, Kodak, Blockbuster). Your task is to diagnose why it failed and present a complete rebranding strategy to bring it back to market dominance.
+                  Teams will be assigned a &quot;dead&quot; or struggling brand (e.g., Nokia, Kodak, Blockbuster). Your task is to diagnose why it failed and present a complete rebranding strategy to bring it back to market dominance.
                 </p>
                 <div className="space-y-2 sm:space-y-3 pt-2">
                   <div className="flex gap-2 sm:gap-3">
@@ -188,13 +188,3 @@ export default function BrandRevivalPage() {
   );
 }
 
-// Simple Helper Component for the Info Grid
-function InfoCard({ icon: Icon, label, value }: any) {
-  return (
-    <div className="bg-white/5 border border-white/10 p-2.5 sm:p-4 rounded-lg sm:rounded-xl flex flex-col items-center text-center hover:bg-white/10 transition-colors">
-      <Icon className="w-5 sm:w-6 h-5 sm:h-6 text-pink-400 mb-1 sm:mb-2" />
-      <span className="text-xs text-gray-400 uppercase tracking-wider">{label}</span>
-      <span className="font-bold text-white text-sm sm:text-base">{value}</span>
-    </div>
-  );
-}

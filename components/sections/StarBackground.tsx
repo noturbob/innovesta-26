@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useRef, useState, Suspense } from "react";
+import { useRef, useState, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
+import * as THREE from "three";
 
 // 1. Reusable helper to generate random points in a sphere
 // Removes the need for 'maath' and ensures no NaN errors
-const generateSpherePositions = (count: number, radius: number) => {
+const generateSpherePositions = (count: number, radius: number): Float32Array => {
   // Ensure we have exact multiples of 3 for (x, y, z)
   const points = new Float32Array(count * 3);
   
@@ -29,12 +30,16 @@ const generateSpherePositions = (count: number, radius: number) => {
   return points;
 };
 
-const StarField = (props: any) => {
-  const ref = useRef<any>(null);
+interface StarFieldProps {
+  [key: string]: any; // For spread props compatibility
+}
+
+const StarField = (props: StarFieldProps) => {
+  const ref = useRef<THREE.Points>(null);
   
   // 2. Use our safe generator function
   // We use 5001 to be safe, but our function handles the math correctly regardless
-  const [sphere] = useState(() => generateSpherePositions(3000, 1.2));
+  const [sphere] = useState<Float32Array>(() => generateSpherePositions(3000, 1.2));
 
   useFrame((state, delta) => {
     if (ref.current) {

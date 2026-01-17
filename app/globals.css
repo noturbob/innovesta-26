@@ -5,24 +5,35 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-cinzel);
-  
+
   /* Custom Animations */
   --animate-float: float 6s ease-in-out infinite;
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-  }
-}
 
-:root {
-  /* Deep Purple Theme from Poster */
-  --background: #0f0518; 
-  --foreground: #ffffff;
-  --primary: #d946ef; /* Neon Pink */
-  --secondary: #7c3aed; /* Deep Violet */
-  --card: rgba(255, 255, 255, 0.05); /* Glass card */
-  --border: rgba(255, 255, 255, 0.1);
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  --animate-heartbeat: heartbeat 2s infinite ease-in-out;
+
+  @keyframes heartbeat {
+    0% {
+      box-shadow: 0 0 0 0 var(--heartbeat-color, var(--destructive));
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 0 7px transparent;
+      transform: scale(1.05);
+    }
+    100% {
+      box-shadow: 0 0 0 0 transparent;
+      transform: scale(1);
+    }
+  }
 }
 
 @layer utilities {
@@ -32,7 +43,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
-  
+
   .text-glow {
     text-shadow: 0 0 20px rgba(217, 70, 239, 0.5);
   }
@@ -42,7 +53,11 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   /* The Gradient Background */
-  background-image: 
-    radial-gradient(circle at 15% 50%, rgba(124, 58, 237, 0.4), transparent 25%), 
+  background-image:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(124, 58, 237, 0.4),
+      transparent 25%
+    ),
     radial-gradient(circle at 85% 30%, rgba(219, 39, 119, 0.2), transparent 25%);
 }
