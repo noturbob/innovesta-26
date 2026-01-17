@@ -41,6 +41,13 @@ export async function POST(req: Request) {
       );
     }
 
+    console.log("Key starts with:", GOOGLE_PRIVATE_KEY?.substring(0, 30));
+    console.log("Key includes \\n:", GOOGLE_PRIVATE_KEY?.includes("\\n"));
+    console.log(
+      "Key includes actual newline:",
+      GOOGLE_PRIVATE_KEY?.includes("\n"),
+    );
+
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: GOOGLE_CLIENT_EMAIL,
