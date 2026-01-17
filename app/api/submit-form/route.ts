@@ -41,6 +41,10 @@ export async function POST(req: Request) {
       );
     }
 
+    console.log("The Google Private Key is:", GOOGLE_PRIVATE_KEY);
+    console.log("The Google_Client_Email:", GOOGLE_CLIENT_EMAIL);
+    console.log("The IMGBB API key is:", IMGBB_API_KEY);
+
     console.log("Key starts with:", GOOGLE_PRIVATE_KEY?.substring(0, 30));
     console.log("Key includes \\n:", GOOGLE_PRIVATE_KEY?.includes("\\n"));
     console.log(
