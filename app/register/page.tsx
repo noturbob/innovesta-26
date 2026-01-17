@@ -279,9 +279,8 @@ export default function RegisterPage() {
         setScreenshot(null);
         setPreviewUrl(null);
         setStep(1);
-        
-        // Optionally redirect to home
-        // router.push('/');
+      
+        router.push('/');
       }, 2000);
 
     } catch (error) {

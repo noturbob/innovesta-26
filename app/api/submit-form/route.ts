@@ -100,7 +100,7 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error("Error: ", error);
     return NextResponse.json(
-      { error: "Failed to submit form" },
+      { error: "Failed to submit form", actualError: error },
       { status: 500 },
     );
   }
