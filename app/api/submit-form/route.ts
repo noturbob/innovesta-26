@@ -2,8 +2,8 @@ import { google } from "googleapis";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
+  const formData = await req.formData();
   try {
-    const formData = await req.formData();
 
     const fields: { [key: string]: string } = {};
     const files: {
@@ -41,17 +41,6 @@ export async function POST(req: Request) {
       );
     }
 
-    console.log("The Google Private Key is:", GOOGLE_PRIVATE_KEY);
-    console.log("The Google_Client_Email:", GOOGLE_CLIENT_EMAIL);
-    console.log("The IMGBB API key is:", IMGBB_API_KEY);
-
-    console.log("Key starts with:", GOOGLE_PRIVATE_KEY?.substring(0, 30));
-    console.log("Key includes \\n:", GOOGLE_PRIVATE_KEY?.includes("\\n"));
-    console.log(
-      "Key includes actual newline:",
-      GOOGLE_PRIVATE_KEY?.includes("\n"),
-    );
-
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: GOOGLE_CLIENT_EMAIL,
@@ -69,8 +58,6 @@ export async function POST(req: Request) {
 
     if (files.screenshot) {
       const file = files.screenshot;
-
-      console.log("Uploading image to ImgBB...");
 
       // Convert buffer to base64
       const base64Image = file.buffer.toString("base64");
@@ -95,10 +82,9 @@ export async function POST(req: Request) {
       }
 
       fileUrl = imgbbData.data.url;
-      console.log("Image uploaded successfully:", fileUrl);
     }
 
-    const response = await sheets.spreadsheets.values.append({
+    await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
       range: "Sheet1!A2", // Adjust based on your sheet structure
       valueInputOption: "RAW",
@@ -107,11 +93,16 @@ export async function POST(req: Request) {
       },
     });
 
-    console.log("The sheets appending response:", response);
+    console.log(
+      `${formData.get("fullName")} has successfully registered from this college: ${formData.get("collegeName")}`,
+    );
 
     return NextResponse.json({ success: true, fields, files });
   } catch (error) {
     console.error("Error: ", error);
+    console.log(
+      `${formData.get("fullName")} was unable to register from this college: ${formData.get("collegeName")}`,
+    );
     return NextResponse.json(
       { error: "Failed to submit form", actualError: error },
       { status: 500 },
