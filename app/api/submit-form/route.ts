@@ -98,7 +98,7 @@ export async function POST(req: Request) {
       console.log("Image uploaded successfully:", fileUrl);
     }
 
-    await sheets.spreadsheets.values.append({
+    const response = await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
       range: "Sheet1!A2", // Adjust based on your sheet structure
       valueInputOption: "RAW",
@@ -106,6 +106,8 @@ export async function POST(req: Request) {
         values: [[new Date().toISOString(), ...Object.values(fields), fileUrl]],
       },
     });
+
+    console.log("The sheets appending response:", response);
 
     return NextResponse.json({ success: true, fields, files });
   } catch (error) {
