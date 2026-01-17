@@ -30,7 +30,7 @@ const generateSpherePositions = (count: number, radius: number) => {
 };
 
 const StarField = (props: any) => {
-  const ref = useRef<any>();
+  const ref = useRef<any>(null);
   
   // 2. Use our safe generator function
   // We use 5001 to be safe, but our function handles the math correctly regardless
