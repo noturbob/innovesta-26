@@ -150,9 +150,9 @@ export default function BrandRevivalPage() {
                 <div className="flex items-center gap-2 sm:gap-3">
                   <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-300 font-bold text-xs sm:text-sm shrink-0">KR</div>
                   <div className="min-w-0">
-                    <p className="text-white font-medium text-sm sm:text-base">Karthik R.</p>
+                    <p className="text-white font-medium text-sm sm:text-base">D. Poosha.</p>
                     <a href="tel:+919876543214" className="text-xs sm:text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3 shrink-0" /> +91 98765 43214
+                      <Phone className="w-3 h-3 shrink-0" /> +91 9182574784
                     </a>
                   </div>
                 </div>
@@ -160,9 +160,9 @@ export default function BrandRevivalPage() {
                 <div className="flex items-center gap-2 sm:gap-3">
                   <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-300 font-bold text-xs sm:text-sm shrink-0">MS</div>
                   <div className="min-w-0">
-                    <p className="text-white font-medium text-sm sm:text-base">Meera S.</p>
+                    <p className="text-white font-medium text-sm sm:text-base">Joel Jeffrey</p>
                     <a href="tel:+919876543215" className="text-xs sm:text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3 shrink-0" /> +91 98765 43215
+                      <Phone className="w-3 h-3 shrink-0" /> +91 8688807788
                     </a>
                   </div>
                 </div>

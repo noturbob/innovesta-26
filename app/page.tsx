@@ -15,6 +15,10 @@ import {
   Trophy,
   ArrowRight,
   Sparkles,
+  Brain,
+  Rabbit,
+  Building2,
+  Cpu,
   ExternalLink,
   Briefcase,
   Music,
@@ -22,6 +26,10 @@ import {
   Palette,
   Hash,
   LucideIcon,
+  Gamepad2, 
+  Target,   
+  Ghost,    
+  Grid,     
 } from "lucide-react";
 import { EasingDefinition, motion } from "framer-motion";
 import StarBackground from "@/components/sections/StarBackground";
@@ -77,7 +85,7 @@ export default function Home() {
               className="mb-4 sm:mb-6 space-y-1 sm:space-y-2"
             >
               <p className="text-xs sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.2em] uppercase text-purple-300 font-semibold drop-shadow-lg">
-                St. Joseph&apos;s Degree & PG College
+                St. Joseph's Degree & PG College
               </p>
               <p className="text-[0.65rem] sm:text-xs md:text-xs text-purple-400 font-mono">
                 Department of Business Management Presents
@@ -117,7 +125,7 @@ export default function Home() {
               variants={fadeInUp}
               className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-purple-200 mb-8 sm:mb-10 md:mb-12 font-light italic px-2"
             >
-              &quot;A Platform for Ideas and Innovation&quot;
+              "A Platform for Ideas and Innovation"
             </motion.p>
 
             {/* BADGES */}
@@ -166,7 +174,7 @@ export default function Home() {
                       Navigate To
                     </p>
                     <p className="font-semibold text-sm">
-                      St. Joseph&apos;s Degree & PG College
+                      St. Joseph's Degree & PG College
                     </p>
                     <p className="text-xs text-gray-400">
                       King Koti Road, Hyderabad
@@ -264,7 +272,6 @@ export default function Home() {
               colorClass="text-pink-400"
               borderColor="border-pink-500/30"
             >
-              {/* Linked Venture Vault Item */}
               <EventItem
                 href="/events/venture-vaults"
                 icon={Briefcase}
@@ -276,15 +283,15 @@ export default function Home() {
 
               <EventItem
                 href="/events/brand-revival"
-                icon={Sparkles}
+                icon={Building2}
                 title="Brand Revival"
-                desc="Rebrand a failing company."
+                desc="Revive a declining or discontinued brand by presenting a creative and feasible revival strategy." 
                 color="group-hover:text-pink-400"
                 border="group-hover:border-pink-500/50"
               />
               <EventItem
                 href="/events/tech-trek"
-                icon={Zap}
+                icon={Cpu}
                 title="Tech Trek"
                 desc="The ultimate IT & Business quiz."
                 color="group-hover:text-pink-400"
@@ -300,7 +307,7 @@ export default function Home() {
             >
               <EventItem
                 href="/events/meme-market"
-                icon={Hash}
+                icon={Rabbit}
                 title="Meme Market"
                 desc="Viral marketing through humor."
                 color="group-hover:text-purple-400"
@@ -310,7 +317,7 @@ export default function Home() {
                 href="/events/tune-trap"
                 icon={Music}
                 title="Tune Trap"
-                desc="Guess the beat, win the heat."
+                desc="A music-based fun quiz identifying tunes and lyrics through multiple elimination rounds."
                 color="group-hover:text-purple-400"
                 border="group-hover:border-purple-500/50"
               />
@@ -319,6 +326,68 @@ export default function Home() {
                 icon={Palette}
                 title="Corporate Canvas"
                 desc="Design the future of ads."
+                color="group-hover:text-purple-400"
+                border="group-hover:border-purple-500/50"
+              />
+            </EventColumn>
+          </div>
+        </section>
+
+        {/* --- Games SECTION --- */}
+        <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 max-w-7xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="text-center mb-12 sm:mb-16 md:mb-20"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-3 sm:mb-4">
+              Our Games
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-purple-300 max-w-2xl mx-auto px-4">
+              Fun and engaging mini-games to test your luck, memory, and skills.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 md:gap-12 lg:gap-24">
+            {/* Games Column */}
+            <EventColumn
+              title="Fun Zone Games"
+              colorClass="text-pink-400"
+              borderColor="border-pink-500/30"
+            >
+              <EventItem
+                href="./games/tambola-game"
+                icon={Grid}
+                title="Tambola"
+                desc="Conducted slot-wise. Individual participation only. Mark numbers on your ticket as drawn to win."
+                color="group-hover:text-pink-400"
+                border="group-hover:border-pink-500/50"
+              />
+
+              <EventItem
+                href="./games/memory-game"
+                icon={Brain}
+                title="Memory Game"
+                desc="Teams have 1 minute to find matching pairs after viewing cards for 30 seconds."
+                color="group-hover:text-pink-400"
+                border="group-hover:border-pink-500/50"
+              />
+
+              <EventItem
+                href="./games/chicken-duck"
+                icon={Ghost}
+                title="Chicken Duck"
+                desc="Blindfolded player hits others with a sponge stick within a limited area."
+                color="group-hover:text-purple-400"
+                border="group-hover:border-purple-500/50"
+              />
+              <EventItem
+                href="./games/balloon-dart"
+                icon={Target}
+                title="Balloon Dart"
+                desc="Hit 3 consecutive balloons using 5 darts to win."
                 color="group-hover:text-purple-400"
                 border="group-hover:border-purple-500/50"
               />
