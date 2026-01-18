@@ -286,7 +286,6 @@ export default function RegisterPage() {
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : "Failed to submit registration";
       toast.error(errorMessage);
-      console.error("Submission error:", error);
     } finally {
       setIsSubmitting(false);
     }

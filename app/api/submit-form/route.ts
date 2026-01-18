@@ -104,7 +104,7 @@ export async function POST(req: Request) {
       `${formData.get("fullName")} was unable to register from this college: ${formData.get("collegeName")}`,
     );
     return NextResponse.json(
-      { error: "Failed to submit form", actualError: error },
+      { error: "Failed to submit form" },
       { status: 500 },
     );
   }
