@@ -357,14 +357,7 @@ export default function Home() {
               colorClass="text-pink-400"
               borderColor="border-pink-500/30"
             >
-              <EventItem
-                href="./games/tambola-game"
-                icon={Grid}
-                title="Tambola"
-                desc="Conducted slot-wise. Individual participation only. Mark numbers on your ticket as drawn to win."
-                color="group-hover:text-pink-400"
-                border="group-hover:border-pink-500/50"
-              />
+
 
               <EventItem
                 href="./games/memory-game"
