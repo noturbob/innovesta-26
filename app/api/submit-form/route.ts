@@ -1,3 +1,4 @@
+import { EVENT_SHEET_MAP } from "@/lib/events";
 import { google } from "googleapis";
 import { NextResponse } from "next/server";
 
@@ -40,11 +41,11 @@ export async function POST(req: Request) {
         { status: 500 },
       );
     }
-
+    
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: GOOGLE_CLIENT_EMAIL,
-        private_key: GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+        private_key: GOOGLE_PRIVATE_KEY,
       },
       scopes: [
         "https://www.googleapis.com/auth/spreadsheets",
@@ -84,9 +85,20 @@ export async function POST(req: Request) {
       fileUrl = imgbbData.data.url;
     }
 
+    const event = fields.event;
+
+    const eventSheetName = EVENT_SHEET_MAP[event];
+
+    if (!eventSheetName) {
+      return NextResponse.json({
+        error: "Invalid event selection"
+      }, { status: 400 })
+    }
+
+
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: "Sheet1!A2", // Adjust based on your sheet structure
+      range: `${eventSheetName}!A2`, // Adjust based on your sheet structure
       valueInputOption: "RAW",
       requestBody: {
         values: [[new Date().toISOString(), ...Object.values(fields), fileUrl]],
