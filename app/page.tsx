@@ -14,7 +14,6 @@ import {
   Ticket,
   Trophy,
   ArrowRight,
-  Sparkles,
   Brain,
   Rabbit,
   Building2,
@@ -22,15 +21,11 @@ import {
   ExternalLink,
   Briefcase,
   Music,
-  Zap,
   Palette,
-  Hash,
-  LucideIcon,
-  Gamepad2, 
-  Target,
-  Layers,   
+  LucideIcon, 
+  Target,   
   Ghost,    
-  Grid,     
+  Layers, // Added Layers import which was missing in your snippet for Tower Tactix
 } from "lucide-react";
 import { EasingDefinition, motion } from "framer-motion";
 import StarBackground from "@/components/sections/StarBackground";
@@ -69,7 +64,11 @@ const staggerContainer = {
 export default function Home() {
   return (
     <TooltipProvider delayDuration={0}>
-      <main className="min-h-screen relative overflow-x-hidden bg-[#0f0518]">
+      {/* UPDATED: Added environment variables for safe areas 
+        pt-[env(safe-area-inset-top)] handles the top notch
+        pb-[env(safe-area-inset-bottom)] handles the bottom home indicator
+      */}
+      <main className="min-h-screen relative overflow-x-hidden bg-[#0f0518] pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
         <StarBackground />
 
         {/* --- HERO SECTION --- */}
@@ -91,7 +90,7 @@ export default function Home() {
               <p className="text-[0.65rem] sm:text-xs md:text-xs text-purple-400 font-mono">
                 DEPARTMENT OF BUSINESS MANAGEMENT
               </p>
-                  <p className="text-[0.65rem] sm:text-xs md:text-xs text-purple-400 font-mono">
+              <p className="text-[0.65rem] sm:text-xs md:text-xs text-purple-400 font-mono">
                 Presents
               </p>
             </motion.div>
@@ -278,7 +277,7 @@ export default function Home() {
               borderColor="border-pink-500/30"
             >
               <EventItem
-                href="/events/venture-vaults"
+                href="/events/venture-vault"
                 icon={Briefcase}
                 title="Venture Vault"
                 desc="Pitch your startup idea to investors."
@@ -363,8 +362,7 @@ export default function Home() {
               colorClass="text-pink-400"
               borderColor="border-pink-500/30"
             >
-
-                            <EventItem
+              <EventItem
                 href="./games/chicken-duck"
                 icon={Ghost}
                 title="Chicken Duck"
@@ -380,7 +378,7 @@ export default function Home() {
                 color="group-hover:text-pink-400"
                 border="group-hover:border-pink-500/50"
               />
-                              <EventItem
+              <EventItem
                 href="./games/balloon-dart"
                 icon={Target}
                 title="Balloon Dart"
@@ -388,7 +386,7 @@ export default function Home() {
                 color="group-hover:text-purple-400"
                 border="group-hover:border-purple-500/50"
               />
-                <EventItem
+              <EventItem
                 href="./games/tower-tact"
                 icon={Layers}
                 title="Tower Tactix"
@@ -401,7 +399,7 @@ export default function Home() {
         </section>
 
         {/* --- FOOTER --- */}
-        <footer className="relative z-10 bg-black/40 backdrop-blur-xl border-t border-white/10 py-8 sm:py-10 md:py-12 text-center mt-12 sm:mt-16 md:mt-20 px-4">
+        <footer className="relative z-10 bg-black/40 backdrop-blur-xl border-t border-white/10 py-8 sm:py-10 md:py-12 text-center mt-12 sm:mt-16 md:mt-20 px-4 pb-[env(safe-area-inset-bottom)]">
           <p className="text-purple-300/60 text-xs sm:text-sm">
             © 2026 Innovesta. Designed by Bobby & Piyush.
           </p>
