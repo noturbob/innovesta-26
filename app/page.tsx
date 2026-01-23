@@ -162,7 +162,7 @@ export default function Home() {
                   >
                     <div className="cursor-pointer flex items-center justify-center sm:justify-start gap-2 sm:gap-3 bg-white/5 backdrop-blur-md border border-white/10 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-purple-100 hover:bg-white/10 hover:border-purple-500/50 transition-all group text-sm sm:text-base">
                       <MapPin className="w-4 h-4 text-purple-500 group-hover:scale-110 transition-transform shrink-0" />
-                      <span className="font-medium">BBA Block, King Koti</span>
+                      <span className="font-medium">BBA Block, Gun Foundry</span>
                     </div>
                   </a>
                 </TooltipTrigger>
@@ -175,7 +175,7 @@ export default function Home() {
                       St. Joseph&apos;s Degree & PG College
                     </p>
                     <p className="text-xs text-gray-400">
-                      King Koti Road, Hyderabad
+                      Gun Foundry, Hyderabad
                     </p>
                     <div className="mt-2 w-full h-24 bg-purple-900/50 rounded overflow-hidden relative">
                       <div className="absolute inset-0 opacity-30 bg-[url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Google_Maps_Logo_2020.svg/2275px-Google_Maps_Logo_2020.svg.png')] bg-cover bg-center"></div>
