@@ -71,8 +71,8 @@ export default function VentureVaultPage() {
             {/* Quick Info Grid */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <InfoCard icon={Calendar} label="Date" value="24 Jan, 2026" />
-              <InfoCard icon={Clock} label="Time" value="10:00 AM" />
-              <InfoCard icon={MapPin} label="Venue" value="Seminar Hall 1" />
+              <InfoCard icon={Clock} label="Time" value="10:30 AM - 12:00 PM" />
+              <InfoCard icon={MapPin} label="Venue" value="201" />
               <InfoCard icon={Users} label="Team Size" value="2 - 4 Members" />
             </div>
 
@@ -83,21 +83,28 @@ export default function VentureVaultPage() {
                   <Trophy className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400" /> Event Structure
                 </h3>
                 <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                  Teams must present a comprehensive business plan for a new startup or product. You will be judged on innovation, feasibility, market research, and presentation skills.
+                  Only shortlisted teams progress to the next round. The event consists of three competitive stages:
                 </p>
                 <div className="space-y-2 sm:space-y-3 pt-2">
                   <div className="flex gap-2 sm:gap-3">
                     <Badge variant="outline" className="border-pink-500 text-pink-400 h-fit mt-0.5 sm:mt-1 text-xs sm:text-sm shrink-0">Round 1</Badge>
                     <div className="min-w-0">
-                      <h4 className="font-semibold text-white text-sm sm:text-base">Elevator Pitch (Abstract)</h4>
-                      <p className="text-xs sm:text-sm text-gray-400">Submit a 500-word abstract of your idea before 20th Jan.</p>
+                      <h4 className="font-semibold text-white text-sm sm:text-base">Executive Summary Screening</h4>
+                      <p className="text-xs sm:text-sm text-gray-400">Submit a 1-2 page executive summary. Shortlisting based on clarity, originality, and feasibility.</p>
                     </div>
                   </div>
                   <div className="flex gap-2 sm:gap-3">
                     <Badge variant="outline" className="border-purple-500 text-purple-400 h-fit mt-0.5 sm:mt-1 text-xs sm:text-sm shrink-0">Round 2</Badge>
                     <div className="min-w-0">
-                      <h4 className="font-semibold text-white text-sm sm:text-base">The Boardroom (Finals)</h4>
-                      <p className="text-xs sm:text-sm text-gray-400">10-minute presentation + 5-minute Q&A with judges.</p>
+                      <h4 className="font-semibold text-white text-sm sm:text-base">Business Model Pitch</h4>
+                      <p className="text-xs sm:text-sm text-gray-400">Present a structured PPT on problem, solution, market, and revenue model + Q&A.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-2 sm:gap-3">
+                    <Badge variant="outline" className="border-yellow-500 text-yellow-400 h-fit mt-0.5 sm:mt-1 text-xs sm:text-sm shrink-0">Round 3</Badge>
+                    <div className="min-w-0">
+                      <h4 className="font-semibold text-white text-sm sm:text-base">Final Shark Tank</h4>
+                      <p className="text-xs sm:text-sm text-gray-400">Investor-style pitch with live questioning and negotiation.</p>
                     </div>
                   </div>
                 </div>
@@ -109,11 +116,12 @@ export default function VentureVaultPage() {
               <h3 className="text-xl sm:text-2xl font-bold text-white">Rules & Regulations</h3>
               <ul className="space-y-2 sm:space-y-3">
                 {[
-                  "All participants must carry their college ID cards.",
-                  "Teams must bring their presentation on a USB drive.",
-                  "Formal attire is mandatory for all team members.",
-                  "The decision of the judges will be final and binding.",
-                  "Use of AI for generating the entire plan will lead to disqualification."
+                  "Teams must adhere to time limits; exceeding may lead to disqualification.",
+                  "All content and ideas must be original; plagiarism is strictly prohibited.",
+                  "Participants must maintain professional behavior and polite language.",
+                  "Registration fee: ₹100 per team.",
+                  "Inter-college participation is allowed.",
+                  "Online & Spot registration available."
                 ].map((rule, i) => (
                   <li key={i} className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-300 bg-white/5 p-2 sm:p-3 rounded-lg border border-white/5">
                     <CheckCircle2 className="w-4 sm:w-5 h-4 sm:h-5 text-green-500 shrink-0 mt-0.5" />
@@ -136,9 +144,9 @@ export default function VentureVaultPage() {
             {/* Prize Card */}
             <Card className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 border-yellow-500/30">
               <CardContent className="p-4 sm:p-6 text-center">
-                <h3 className="text-sm sm:text-lg font-semibold text-yellow-200 mb-1">Winner Prize</h3>
-                <p className="text-3xl sm:text-4xl font-bold text-yellow-400">₹15,000</p>
-                <p className="text-xs sm:text-sm text-yellow-200/60 mt-2">+ Trophy & Certificates</p>
+                <h3 className="text-sm sm:text-lg font-semibold text-yellow-200 mb-1">Registration Fee</h3>
+                <p className="text-3xl sm:text-4xl font-bold text-yellow-400">₹100</p>
+                <p className="text-xs sm:text-sm text-yellow-200/60 mt-2">Per Team</p>
               </CardContent>
             </Card>
 
@@ -150,9 +158,9 @@ export default function VentureVaultPage() {
                 <div className="flex items-center gap-2 sm:gap-3">
                   <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-300 font-bold text-xs sm:text-sm shrink-0">AK</div>
                   <div className="min-w-0">
-                    <p className="text-white font-medium text-sm sm:text-base">D. Poosha</p>
-                    <a href="tel:+919876543210" className="text-xs sm:text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3 shrink-0" /> +91 9182574784
+                    <p className="text-white font-medium text-sm sm:text-base">Samarth Yadav</p>
+                    <a href="tel:+919182574784" className="text-xs sm:text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
+                      <Phone className="w-3 h-3 shrink-0" /> +91 9110370765
                     </a>
                   </div>
                 </div>
@@ -160,9 +168,9 @@ export default function VentureVaultPage() {
                 <div className="flex items-center gap-2 sm:gap-3">
                   <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-300 font-bold text-xs sm:text-sm shrink-0">SR</div>
                   <div className="min-w-0">
-                    <p className="text-white font-medium text-sm sm:text-base">Joel Jeffrey</p>
-                    <a href="tel:+919876543210" className="text-xs sm:text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3 shrink-0" /> +91 8688807788
+                    <p className="text-white font-medium text-sm sm:text-base">Rushika</p>
+                    <a href="tel:+918688807788" className="text-xs sm:text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
+                      <Phone className="w-3 h-3 shrink-0" /> +91 8790999505
                     </a>
                   </div>
                 </div>
@@ -187,4 +195,3 @@ export default function VentureVaultPage() {
     </main>
   );
 }
-

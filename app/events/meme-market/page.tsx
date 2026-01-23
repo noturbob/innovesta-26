@@ -71,9 +71,9 @@ export default function MemeMarketPage() {
             {/* Quick Info Grid */}
             <div className="grid grid-cols-2 gap-4">
               <InfoCard icon={Calendar} label="Date" value="24 Jan, 2026" />
-              <InfoCard icon={Clock} label="Time" value="02:00 PM" />
-              <InfoCard icon={MapPin} label="Venue" value="Computer Lab 3" />
-              <InfoCard icon={Users} label="Team Size" value="1 - 2 Members" />
+              <InfoCard icon={Clock} label="Time" value="10:30 AM" />
+              <InfoCard icon={MapPin} label="Venue" value="Computer Lab" />
+              <InfoCard icon={Users} label="Team Size" value="2 - 3 Members" />
             </div>
 
             {/* Event Description */}
@@ -90,14 +90,14 @@ export default function MemeMarketPage() {
                     <Badge variant="outline" className="border-purple-500 text-purple-400 h-fit mt-1">Round 1</Badge>
                     <div>
                       <h4 className="font-semibold text-white">Template War</h4>
-                      <p className="text-sm text-gray-400">Create 3 memes in 30 minutes based on trending templates.</p>
+                      <p className="text-sm text-gray-400">Create 1 memes in 30 minutes based on trending templates.</p>
                     </div>
                   </div>
                   <div className="flex gap-3">
                     <Badge variant="outline" className="border-indigo-500 text-indigo-400 h-fit mt-1">Round 2</Badge>
                     <div>
-                      <h4 className="font-semibold text-white">Brand Roast (Finals)</h4>
-                      <p className="text-sm text-gray-400">Roast a competitor brand using witty humor and creativity.</p>
+                      <h4 className="font-semibold text-white">Guessing Game (Finals)</h4>
+                      <p className="text-sm text-gray-400">Guess the meme in given time.</p>
                     </div>
                   </div>
                 </div>
@@ -136,9 +136,9 @@ export default function MemeMarketPage() {
             {/* Prize Card */}
             <Card className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 border-purple-500/30">
               <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-semibold text-purple-200 mb-1">Winner Prize</h3>
-                <p className="text-4xl font-bold text-purple-400">₹8,000</p>
-                <p className="text-sm text-purple-200/60 mt-2">+ Certificates & Swag</p>
+                <h3 className="text-lg font-semibold text-purple-200 mb-1">Registration Fee</h3>
+                <p className="text-4xl font-bold text-purple-400">₹100</p>
+                <p className="text-sm text-purple-200/60 mt-2">+ Per Team</p>
               </CardContent>
             </Card>
 
@@ -150,9 +150,9 @@ export default function MemeMarketPage() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-300 font-bold">RK</div>
                   <div>
-                    <p className="text-white font-medium">Chetan Baldava</p>
+                    <p className="text-white font-medium">Saket</p>
                     <a href="tel:+919876543212" className="text-sm text-gray-400 hover:text-purple-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 8074523025
+                      <Phone className="w-3 h-3" /> +91 8125502253
                     </a>
                   </div>
                 </div>
@@ -160,9 +160,9 @@ export default function MemeMarketPage() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-300 font-bold">ZM</div>
                   <div>
-                    <p className="text-white font-medium">Saketh Gupta</p>
+                    <p className="text-white font-medium">Komal</p>
                     <a href="tel:+919876543213" className="text-sm text-gray-400 hover:text-purple-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 8125502253
+                      <Phone className="w-3 h-3" /> +91 9951477111
                     </a>
                   </div>
                 </div>

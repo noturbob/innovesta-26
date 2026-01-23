@@ -37,7 +37,7 @@ import { ReactNode } from "react";
 
 // --- LINKS & DATA ---
 const MAP_LINK =
-  "https://www.google.com/maps/search/?api=1&query=St.+Joseph's+Degree+and+PG+College&query_place_id=ChIJW4o8H9mZyzsRFmzBpbTt4Eo";
+  "https://www.google.com/maps/place/St.+Joseph's+Extended+Campus,+Caprotti+Hall/@17.3956981,78.4781228,354m/data=!3m1!1e3!4m6!3m5!1s0x3bcb99d906ae58a5:0xeab3fa00e26d95f0!8m2!3d17.3950167!4d78.4780256!16s%2Fg%2F11b6gjmpdt?entry=tts&g_ep=EgoyMDI2MDEyMC4wIPu8ASoASAFQAw%3D%3D&skid=88f89f8a-dc44-4e51-8686-6ee2290100e6";
 const CALENDAR_LINK =
   "https://calendar.google.com/calendar/render?action=TEMPLATE&text=INNOVESTA+2026&dates=20260124T090000/20260124T180000&details=Management+Fest+at+St.+Joseph's+Degree+%26+PG+College.+Don't+miss+it!&location=St.+Joseph's+Degree+%26+PG+College,+King+Koti+Road,+Hyderabad";
 
@@ -88,7 +88,10 @@ export default function Home() {
                 St. Joseph's Degree & PG College
               </p>
               <p className="text-[0.65rem] sm:text-xs md:text-xs text-purple-400 font-mono">
-                Department of Business Management Presents
+                DEPARTMENT OF BUSINESS MANAGEMENT
+              </p>
+                  <p className="text-[0.65rem] sm:text-xs md:text-xs text-purple-400 font-mono">
+                Presents
               </p>
             </motion.div>
 
@@ -125,7 +128,7 @@ export default function Home() {
               variants={fadeInUp}
               className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-purple-200 mb-8 sm:mb-10 md:mb-12 font-light italic px-2"
             >
-              "A Platform for Ideas and Innovation"
+              A Platform for Ideas and Innovation
             </motion.p>
 
             {/* BADGES */}
@@ -220,12 +223,13 @@ export default function Home() {
               </h3>
             </div>
             <p className="text-sm sm:text-base md:text-lg text-purple-200 mb-4">
-              Includes 1 Game for{" "}
-              <span className="text-pink-400 font-bold">FREE!</span>
+              {" "}
+              <span className="text-pink-400 font-bold">FREE! </span>
+              for Josephietes
             </p>
             <div className="h-px w-full bg-gradient-to-r from-pink-500/50 to-transparent my-4"></div>
             <p className="text-xs sm:text-sm text-gray-400 font-mono">
-              * Extra games: ₹50 each.
+              Includes 1 Game for Free
             </p>
           </TiltCard>
 
@@ -289,14 +293,6 @@ export default function Home() {
                 color="group-hover:text-pink-400"
                 border="group-hover:border-pink-500/50"
               />
-              <EventItem
-                href="/events/tech-trek"
-                icon={Cpu}
-                title="Tech Trek"
-                desc="The ultimate IT & Business quiz."
-                color="group-hover:text-pink-400"
-                border="group-hover:border-pink-500/50"
-              />
             </EventColumn>
 
             {/* Informal Column */}
@@ -305,6 +301,15 @@ export default function Home() {
               colorClass="text-purple-400"
               borderColor="border-purple-500/30"
             >
+               <EventItem
+                href="/events/tech-trek"
+                icon={Cpu}
+                title="Tech Trek"
+                desc="The ultimate IT & Business quiz."
+                color="group-hover:text-pink-400"
+                border="group-hover:border-pink-500/50"
+              />
+              
               <EventItem
                 href="/events/meme-market"
                 icon={Rabbit}
@@ -357,39 +362,38 @@ export default function Home() {
               colorClass="text-pink-400"
               borderColor="border-pink-500/30"
             >
-              <EventItem
-                href="./games/tambola-game"
-                icon={Grid}
-                title="Tambola"
-                desc="Conducted slot-wise. Individual participation only. Mark numbers on your ticket as drawn to win."
-                color="group-hover:text-pink-400"
-                border="group-hover:border-pink-500/50"
-              />
 
-              <EventItem
-                href="./games/memory-game"
-                icon={Brain}
-                title="Memory Game"
-                desc="Teams have 1 minute to find matching pairs after viewing cards for 30 seconds."
-                color="group-hover:text-pink-400"
-                border="group-hover:border-pink-500/50"
-              />
-
-              <EventItem
+                            <EventItem
                 href="./games/chicken-duck"
                 icon={Ghost}
                 title="Chicken Duck"
-                desc="Blindfolded player hits others with a sponge stick within a limited area."
+                desc="A fun-filled group game where a blindfolded player tries to tag others using a sponge stick within a limited area ."
                 color="group-hover:text-purple-400"
                 border="group-hover:border-purple-500/50"
               />
               <EventItem
+                href="./games/memory-game"
+                icon={Brain}
+                title="Flip & Recall"
+                desc="Sharpen your mind by finding matching pairs of hidden cards in this engaging test of observation and recall skills."
+                color="group-hover:text-pink-400"
+                border="group-hover:border-pink-500/50"
+              />
+                              <EventItem
                 href="./games/balloon-dart"
                 icon={Target}
                 title="Balloon Dart"
-                desc="Hit 3 consecutive balloons using 5 darts to win."
+                desc="Test your aim and accuracy by attempting to pop three consecutive balloons using five provided darts."
                 color="group-hover:text-purple-400"
                 border="group-hover:border-purple-500/50"
+              />
+                <EventItem
+                href="./games/tower-tact"
+                icon={Brain}
+                title="Tower Tactix"
+                desc="A time-based cup stacking challenge that tests your fast hands and sharp focus to build and unstack perfect patterns ."
+                color="group-hover:text-pink-400"
+                border="group-hover:border-pink-500/50"
               />
             </EventColumn>
           </div>
@@ -398,7 +402,7 @@ export default function Home() {
         {/* --- FOOTER --- */}
         <footer className="relative z-10 bg-black/40 backdrop-blur-xl border-t border-white/10 py-8 sm:py-10 md:py-12 text-center mt-12 sm:mt-16 md:mt-20 px-4">
           <p className="text-purple-300/60 text-xs sm:text-sm">
-            © 2026 Innovesta. Designed by IT Dept.
+            © 2026 Innovesta. Designed by Bobby & Piyush.
           </p>
         </footer>
       </main>
