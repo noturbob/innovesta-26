@@ -150,9 +150,9 @@ export default function TechTrekPage() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-300 font-bold">RM</div>
                   <div>
-                    <p className="text-white font-medium">Rohan M.</p>
+                    <p className="text-white font-medium">D. Poosha</p>
                     <a href="tel:+919876543218" className="text-sm text-gray-400 hover:text-blue-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 98765 43218
+                      <Phone className="w-3 h-3" /> +91 9182574784
                     </a>
                   </div>
                 </div>
@@ -160,9 +160,9 @@ export default function TechTrekPage() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-300 font-bold">AL</div>
                   <div>
-                    <p className="text-white font-medium">Ananya L.</p>
+                    <p className="text-white font-medium">Joel Jeffrey</p>
                     <a href="tel:+919876543219" className="text-sm text-gray-400 hover:text-blue-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 98765 43219
+                      <Phone className="w-3 h-3" /> +91 8688807788
                     </a>
                   </div>
                 </div>

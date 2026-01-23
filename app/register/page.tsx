@@ -19,25 +19,29 @@ const STEPS = [
   { id: 4, title: "Payment" },
 ];
 
-const EVENTS = [
+const FORMAL_EVENTS = [
   "Venture Vault",
   "Brand Revival Challenge",
+];
+
+const INFORMAL_EVENTS = [
   "Meme Market",
   "Tech Trek",
   "Tune Trap",
   "Corporate Canvas",
-]
-
+];
 
 export interface RegisterFormData {
   fullName: string;
   email: string;
   mobile: string;
   collegeName: string;
+  collegeAddress: string;
   discipline: string;
   rollNumber: string;
   yearOfStudy: string;
-  event: string;
+  formalEvent: string;
+  informalEvent: string;
   transactionId: string;
 }
 
@@ -54,15 +58,17 @@ export default function RegisterPage() {
   const [errors, setErrors] = useState<ValidationErrors>({});
 
   const [formData, setFormData] = useState<RegisterFormData>({
-    fullName: "Piyush Jain",
-    email: "piyush@gmail.com",
-    mobile: "7995266191",
-    collegeName: "St Josephs",
-    discipline: "BBA",
-    rollNumber: "121423445",
+    fullName: "",
+    email: "",
+    mobile: "",
+    collegeName: "",
+    collegeAddress: "",
+    discipline: "",
+    rollNumber: "",
     yearOfStudy: "1st Year",
-    event: EVENTS[0],
-    transactionId: "2323q2ewqe",
+    formalEvent: FORMAL_EVENTS[0],
+    informalEvent: INFORMAL_EVENTS[0],
+    transactionId: "",
   });
 
   // Validation functions
@@ -102,6 +108,10 @@ export default function RegisterPage() {
     if (stepNumber === 3) {
       if (!formData.collegeName.trim()) {
         newErrors.collegeName = "College name is required";
+      }
+
+      if (!formData.collegeAddress.trim()) {
+        newErrors.collegeAddress = "College address is required";
       }
 
       if (!formData.discipline.trim()) {
@@ -258,10 +268,12 @@ export default function RegisterPage() {
           email: "",
           mobile: "",
           collegeName: "",
+          collegeAddress: "",
           discipline: "",
           rollNumber: "",
           yearOfStudy: "1st Year",
-          event: EVENTS[0],
+          formalEvent: FORMAL_EVENTS[0],
+          informalEvent: INFORMAL_EVENTS[0],
           transactionId: "",
         });
         setScreenshot(null);
@@ -479,7 +491,24 @@ export default function RegisterPage() {
                       <p className="text-xs text-red-400">{errors.collegeName}</p>
                     )}
                   </div>
-          
+                  <div className="space-y-1.5 sm:space-y-2 col-span-2">
+                    <Label className="text-sm sm:text-base">
+                      College Address
+                    </Label>
+                    <Input
+                      name="collegeAddress"
+                      value={formData.collegeAddress}
+                      onChange={handleChange}
+                      required
+                      placeholder="King Koti, Hyderabad"
+                      className={`bg-white/5 border-white/10 text-sm sm:text-base ${
+                        errors.collegeAddress ? 'border-red-500' : ''
+                      }`}
+                    />
+                    {errors.collegeAddress && (
+                      <p className="text-xs text-red-400">{errors.collegeAddress}</p>
+                    )}
+                  </div>
                   <div className="grid grid-cols-2 gap-3 sm:gap-4">
                     <div className="space-y-1.5 sm:space-y-2">
                       <Label className="text-sm sm:text-base">Discipline</Label>
@@ -580,17 +609,36 @@ export default function RegisterPage() {
                       </p>
                     </div>
                   </div>
+
                   <div className="space-y-1.5 sm:space-y-2">
                     <Label className="text-sm sm:text-base">
-                      Select Event
+                      Select Formal Event
                     </Label>
                     <select
-                      name="informalEvent"
-                      value={formData.event}
+                      name="formalEvent"
+                      value={formData.formalEvent}
                       onChange={handleChange}
                       className="w-full h-9 sm:h-10 rounded-md bg-white/5 border border-white/10 px-3 text-xs sm:text-sm text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                     >
-                      {EVENTS.map((ev) => (
+                      {FORMAL_EVENTS.map((ev) => (
+                        <option key={ev} value={ev} className="bg-black">
+                          {ev}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <Label className="text-sm sm:text-base">
+                      Select Informal Event
+                    </Label>
+                    <select
+                      name="informalEvent"
+                      value={formData.informalEvent}
+                      onChange={handleChange}
+                      className="w-full h-9 sm:h-10 rounded-md bg-white/5 border border-white/10 px-3 text-xs sm:text-sm text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    >
+                      {INFORMAL_EVENTS.map((ev) => (
                         <option key={ev} value={ev} className="bg-black">
                           {ev}
                         </option>

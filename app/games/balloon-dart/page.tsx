@@ -13,22 +13,21 @@ import {
   CheckCircle2, 
   Phone, 
   Trophy, 
-  Hash, // Changed icon to Hash for "Meme"
+  Target, // Using Target icon for Darts
 } from "lucide-react";
 import { motion } from "framer-motion";
 import StarBackground from "@/components/sections/StarBackground";
-import InfoCard from "@/components/events/InfoCard";
 
-export default function MemeMarketPage() {
+export default function BalloonDartPage() {
   return (
     <main className="min-h-screen bg-[#0f0518] text-white relative overflow-hidden">
       
       {/* Background */}
       <StarBackground />
       
-      {/* Floating Blobs (Purple themed for Informal) */}
-      <div className="fixed top-0 right-0 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] -z-10 pointer-events-none" />
-      <div className="fixed bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px] -z-10 pointer-events-none" />
+      {/* Floating Blobs (Red/Cyan for Arcade Vibe) */}
+      <div className="fixed top-0 right-0 w-[500px] h-[500px] bg-red-600/20 rounded-full blur-[120px] -z-10 pointer-events-none" />
+      <div className="fixed bottom-0 left-0 w-[500px] h-[500px] bg-cyan-600/20 rounded-full blur-[120px] -z-10 pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6 py-12 relative z-10">
         
@@ -45,14 +44,14 @@ export default function MemeMarketPage() {
         >
           <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
             <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-              <Hash className="w-12 h-12 text-purple-500" />
+              <Target className="w-12 h-12 text-red-500" />
             </div>
             <div>
-              <h1 className="text-4xl md:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-purple-500 mb-2">
-                Meme Market
+              <h1 className="text-4xl md:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-red-200 to-red-500 mb-2">
+                Balloon Dart
               </h1>
               <p className="text-xl text-gray-400 max-w-2xl">
-                Viral Marketing with Humor. Create the funniest, most relatable memes to promote a brand and win over the internet.
+                Aim. Shoot. Pop. Test your precision and focus in this classic carnival game.
               </p>
             </div>
           </div>
@@ -71,33 +70,33 @@ export default function MemeMarketPage() {
             {/* Quick Info Grid */}
             <div className="grid grid-cols-2 gap-4">
               <InfoCard icon={Calendar} label="Date" value="24 Jan, 2026" />
-              <InfoCard icon={Clock} label="Time" value="02:00 PM" />
-              <InfoCard icon={MapPin} label="Venue" value="Computer Lab 3" />
-              <InfoCard icon={Users} label="Team Size" value="1 - 2 Members" />
+              <InfoCard icon={Clock} label="Time" value="All Day" />
+              <InfoCard icon={MapPin} label="Venue" value="Room 402" />
+              <InfoCard icon={Users} label="Entry" value="Individual" />
             </div>
 
             {/* Event Description */}
             <Card className="bg-white/5 border-white/10 backdrop-blur-md">
               <CardContent className="p-6 space-y-4">
                 <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                  <Trophy className="w-5 h-5 text-yellow-400" /> Event Structure
+                  <Trophy className="w-5 h-5 text-yellow-400" /> Game Format
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Participants will be given a random product or brand on the spot. Your goal is to create a viral meme marketing campaign using existing templates or original designs.
+                  A wall of balloons will be set up. Each player gets a specific number of darts to pop them. Precision is key to winning the prize.
                 </p>
                 <div className="space-y-3 pt-2">
                   <div className="flex gap-3">
-                    <Badge variant="outline" className="border-purple-500 text-purple-400 h-fit mt-1">Round 1</Badge>
+                    <Badge variant="outline" className="border-red-500 text-red-400 h-fit mt-1">Setup</Badge>
                     <div>
-                      <h4 className="font-semibold text-white">Template War</h4>
-                      <p className="text-sm text-gray-400">Create 3 memes in 30 minutes based on trending templates.</p>
+                      <h4 className="font-semibold text-white">The Balloon Wall</h4>
+                      <p className="text-sm text-gray-400">Target grid of inflated balloons.</p>
                     </div>
                   </div>
                   <div className="flex gap-3">
-                    <Badge variant="outline" className="border-indigo-500 text-indigo-400 h-fit mt-1">Round 2</Badge>
+                    <Badge variant="outline" className="border-cyan-500 text-cyan-400 h-fit mt-1">Chances</Badge>
                     <div>
-                      <h4 className="font-semibold text-white">Brand Roast (Finals)</h4>
-                      <p className="text-sm text-gray-400">Roast a competitor brand using witty humor and creativity.</p>
+                      <h4 className="font-semibold text-white">5 Darts</h4>
+                      <p className="text-sm text-gray-400">Each player is given 5 darts to make their shots count.</p>
                     </div>
                   </div>
                 </div>
@@ -109,11 +108,11 @@ export default function MemeMarketPage() {
               <h3 className="text-2xl font-bold text-white">Rules & Regulations</h3>
               <ul className="grid gap-3">
                 {[
-                  "Memes must be original and created during the event time.",
-                  "No offensive, political, or NSFW content allowed.",
-                  "Participants can use Canva, Photoshop, or Meme Generators.",
-                  "Internet access will be provided for downloading assets.",
-                  "Humor, creativity, and brand relevance are key judging criteria."
+                  "Inter-college participation is allowed.",
+                  "Entry fee is ₹30 per person.",
+                  "Players must hit 3 consecutive balloons to win.",
+                  "Darts must be thrown from behind the marked line.",
+                  "Organizers decision is final regarding hit validity."
                 ].map((rule, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-300 bg-white/5 p-3 rounded-lg border border-white/5">
                     <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
@@ -134,11 +133,11 @@ export default function MemeMarketPage() {
           >
             
             {/* Prize Card */}
-            <Card className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 border-purple-500/30">
+            <Card className="bg-gradient-to-br from-red-500/10 to-orange-500/10 border-red-500/30">
               <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-semibold text-purple-200 mb-1">Winner Prize</h3>
-                <p className="text-4xl font-bold text-purple-400">₹8,000</p>
-                <p className="text-sm text-purple-200/60 mt-2">+ Certificates & Swag</p>
+                <h3 className="text-lg font-semibold text-red-200 mb-1">Entry Fee</h3>
+                <p className="text-4xl font-bold text-red-400">₹30</p>
+                <p className="text-sm text-red-200/60 mt-2">Per Person</p>
               </CardContent>
             </Card>
 
@@ -148,42 +147,55 @@ export default function MemeMarketPage() {
                 <h3 className="font-bold text-white mb-4 border-b border-white/10 pb-2">Student Coordinators</h3>
                 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-300 font-bold">RK</div>
+                  <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center text-red-300 font-bold">AK</div>
                   <div>
-                    <p className="text-white font-medium">Chetan Baldava</p>
-                    <a href="tel:+919876543212" className="text-sm text-gray-400 hover:text-purple-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 8074523025
-                    </a>
+                    <p className="text-white font-medium">Saranya Jeelugula</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-300 font-bold">ZM</div>
+                  <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-300 font-bold">PS</div>
                   <div>
-                    <p className="text-white font-medium">Saketh Gupta</p>
-                    <a href="tel:+919876543213" className="text-sm text-gray-400 hover:text-purple-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 8125502253
-                    </a>
+                    <p className="text-white font-medium">Gurbakshish Kaur</p>
+                  </div>
+                </div>
+
+                 <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-300 font-bold">PS</div>
+                  <div>
+                    <p className="text-white font-medium">Prachi Asawa</p>
                   </div>
                 </div>
 
               </CardContent>
             </Card>
 
-            {/* Register Button */}
-            <Link href="/register" className="block">
-              <Button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-6 text-lg font-bold shadow-lg shadow-purple-500/25">
-                Register for Event
+            {/* Non-clickable Contact Block */}
+            <div className="w-full bg-white/5 border border-white/10 rounded-lg p-6 text-center">
+              <p className="text-lg font-bold text-white mb-2">Registration</p>
+              <p className="text-gray-400 text-sm mb-4">
+                This is a spot event. Please visit the venue or contact the coordinators to register.
+              </p>
+              <Button disabled className="w-full bg-white/10 text-gray-400 cursor-not-allowed">
+                Contact Coordinator to Register
               </Button>
-            </Link>
-            <p className="text-xs text-center text-gray-500">
-              *Registration fee includes entry to this event.
-            </p>
+            </div>
 
           </motion.div>
 
         </div>
       </div>
     </main>
+  );
+}
+
+// Simple Helper Component for the Info Grid
+function InfoCard({ icon: Icon, label, value }: any) {
+  return (
+    <div className="bg-white/5 border border-white/10 p-4 rounded-xl flex flex-col items-center text-center hover:bg-white/10 transition-colors">
+      <Icon className="w-6 h-6 text-red-400 mb-2" />
+      <span className="text-xs text-gray-400 uppercase tracking-wider">{label}</span>
+      <span className="font-bold text-white">{value}</span>
+    </div>
   );
 }

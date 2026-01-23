@@ -150,9 +150,9 @@ export default function TuneTrapPage() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-300 font-bold">VN</div>
                   <div>
-                    <p className="text-white font-medium">Vikram N.</p>
+                    <p className="text-white font-medium">Chetan Baldava</p>
                     <a href="tel:+919876543216" className="text-sm text-gray-400 hover:text-cyan-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 98765 43216
+                      <Phone className="w-3 h-3" /> +91 8074523025
                     </a>
                   </div>
                 </div>
@@ -160,9 +160,9 @@ export default function TuneTrapPage() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-300 font-bold">PJ</div>
                   <div>
-                    <p className="text-white font-medium">Priya J.</p>
+                    <p className="text-white font-medium">Saketh Gupta</p>
                     <a href="tel:+919876543217" className="text-sm text-gray-400 hover:text-cyan-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 98765 43217
+                      <Phone className="w-3 h-3" /> +91 8125502253
                     </a>
                   </div>
                 </div>
