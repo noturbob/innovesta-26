@@ -150,9 +150,9 @@ export default function CorporateCanvasPage() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-300 font-bold">CB</div>
                   <div>
-                    <p className="text-white font-medium">Chetan Baldava</p>
+                    <p className="text-white font-medium">Suchreet Kaur</p>
                     <a href="tel:+918074523025" className="text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 8074523025
+                      <Phone className="w-3 h-3" /> +91 9949416348
                     </a>
                   </div>
                 </div>
@@ -160,9 +160,9 @@ export default function CorporateCanvasPage() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-300 font-bold">SG</div>
                   <div>
-                    <p className="text-white font-medium">Saketh Gupta</p>
+                    <p className="text-white font-medium">Amardeep</p>
                     <a href="tel:+918125502253" className="text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 8125502253
+                      <Phone className="w-3 h-3" /> +91 7989941811
                     </a>
                   </div>
                 </div>

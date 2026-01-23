@@ -293,14 +293,6 @@ export default function Home() {
                 color="group-hover:text-pink-400"
                 border="group-hover:border-pink-500/50"
               />
-              <EventItem
-                href="/events/tech-trek"
-                icon={Cpu}
-                title="Tech Trek"
-                desc="The ultimate IT & Business quiz."
-                color="group-hover:text-pink-400"
-                border="group-hover:border-pink-500/50"
-              />
             </EventColumn>
 
             {/* Informal Column */}
@@ -309,6 +301,15 @@ export default function Home() {
               colorClass="text-purple-400"
               borderColor="border-purple-500/30"
             >
+               <EventItem
+                href="/events/tech-trek"
+                icon={Cpu}
+                title="Tech Trek"
+                desc="The ultimate IT & Business quiz."
+                color="group-hover:text-pink-400"
+                border="group-hover:border-pink-500/50"
+              />
+              
               <EventItem
                 href="/events/meme-market"
                 icon={Rabbit}

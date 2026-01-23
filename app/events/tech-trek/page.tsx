@@ -71,8 +71,8 @@ export default function TechTrekPage() {
             {/* Quick Info Grid */}
             <div className="grid grid-cols-2 gap-4">
               <InfoCard icon={Calendar} label="Date" value="24 Jan, 2026" />
-              <InfoCard icon={Clock} label="Time" value="01:00 PM" />
-              <InfoCard icon={MapPin} label="Venue" value="Computer Lab 1" />
+              <InfoCard icon={Clock} label="Time" value="1:00 PM - 2:00 PM" />
+              <InfoCard icon={MapPin} label="Venue" value="Computer Lab" />
               <InfoCard icon={Users} label="Team Size" value="2-3 Members" />
             </div>
 

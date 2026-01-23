@@ -71,7 +71,7 @@ export default function MemeMarketPage() {
             {/* Quick Info Grid */}
             <div className="grid grid-cols-2 gap-4">
               <InfoCard icon={Calendar} label="Date" value="24 Jan, 2026" />
-              <InfoCard icon={Clock} label="Time" value="10:00 AM" />
+              <InfoCard icon={Clock} label="Time" value="10:30 AM" />
               <InfoCard icon={MapPin} label="Venue" value="Computer Lab" />
               <InfoCard icon={Users} label="Team Size" value="2 - 3 Members" />
             </div>
@@ -150,9 +150,9 @@ export default function MemeMarketPage() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-300 font-bold">RK</div>
                   <div>
-                    <p className="text-white font-medium">Chetan Baldava</p>
+                    <p className="text-white font-medium">Saket</p>
                     <a href="tel:+919876543212" className="text-sm text-gray-400 hover:text-purple-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 8074523025
+                      <Phone className="w-3 h-3" /> +91 8125502253
                     </a>
                   </div>
                 </div>
@@ -160,9 +160,9 @@ export default function MemeMarketPage() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-300 font-bold">ZM</div>
                   <div>
-                    <p className="text-white font-medium">Harshini</p>
+                    <p className="text-white font-medium">Komal</p>
                     <a href="tel:+919876543213" className="text-sm text-gray-400 hover:text-purple-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 8074523025
+                      <Phone className="w-3 h-3" /> +91 9951477111
                     </a>
                   </div>
                 </div>

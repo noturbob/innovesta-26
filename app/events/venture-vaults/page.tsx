@@ -71,8 +71,8 @@ export default function VentureVaultPage() {
             {/* Quick Info Grid */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <InfoCard icon={Calendar} label="Date" value="24 Jan, 2026" />
-              <InfoCard icon={Clock} label="Time" value="10:00 AM" />
-              <InfoCard icon={MapPin} label="Venue" value="Seminar Hall 1" />
+              <InfoCard icon={Clock} label="Time" value="10:30 AM - 12:00 PM" />
+              <InfoCard icon={MapPin} label="Venue" value="201" />
               <InfoCard icon={Users} label="Team Size" value="2 - 4 Members" />
             </div>
 
@@ -158,9 +158,9 @@ export default function VentureVaultPage() {
                 <div className="flex items-center gap-2 sm:gap-3">
                   <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-300 font-bold text-xs sm:text-sm shrink-0">AK</div>
                   <div className="min-w-0">
-                    <p className="text-white font-medium text-sm sm:text-base">D. Poosha</p>
+                    <p className="text-white font-medium text-sm sm:text-base">Samarth Yadav</p>
                     <a href="tel:+919182574784" className="text-xs sm:text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3 shrink-0" /> +91 9182574784
+                      <Phone className="w-3 h-3 shrink-0" /> +91 9110370765
                     </a>
                   </div>
                 </div>
@@ -168,9 +168,9 @@ export default function VentureVaultPage() {
                 <div className="flex items-center gap-2 sm:gap-3">
                   <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-300 font-bold text-xs sm:text-sm shrink-0">SR</div>
                   <div className="min-w-0">
-                    <p className="text-white font-medium text-sm sm:text-base">Joel Jeffrey</p>
+                    <p className="text-white font-medium text-sm sm:text-base">Rushika</p>
                     <a href="tel:+918688807788" className="text-xs sm:text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3 shrink-0" /> +91 8688807788
+                      <Phone className="w-3 h-3 shrink-0" /> +91 8790999505
                     </a>
                   </div>
                 </div>
