@@ -5,7 +5,6 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   const formData = await req.formData();
   try {
-
     const fields: { [key: string]: string } = {};
     const files: {
       [key: string]: {
@@ -31,6 +30,9 @@ export async function POST(req: Request) {
         fields[key] = value;
       }
     }
+
+    console.log("The fields data are:", fields);
+
     const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY;
     const GOOGLE_CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL;
     const IMGBB_API_KEY = process.env.IMGBB_API_KEY;
@@ -94,7 +96,6 @@ export async function POST(req: Request) {
         error: "Invalid event selection"
       }, { status: 400 })
     }
-
 
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,

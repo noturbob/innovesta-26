@@ -35,6 +35,7 @@ export interface EventRegistrationConfig {
   fee: number;
   description: string;
   steps: RegistrationStep[];
+  maxTeamSize: number;
   additionalValidation?: (formData: Record<string, string>) => {
     isValid: boolean;
     errors?: Record<string, string>;
@@ -92,17 +93,19 @@ export const createTeamDetails = (maxTeamSize: number): RegistrationStep => {
     (_, i) => `${i + 2} Members`,
   );
 
-  // 2. Generate Member fields (Member 1 to Member X)
+  // 2. Generate Member fields (Member 2 to Member X) - Member 1 is the team leader
   const memberFields: FormField[] = Array.from(
-    { length: maxTeamSize },
+    { length: maxTeamSize - 1 },
     (_, index) => {
-      const num = index + 1;
+      const num = index + 2; // Start from 2 since team leader is member 1
       return {
         name: `teamMember${num}`,
         label: `Team Member ${num}`,
-        type: "text", // Explicitly cast if TS complains
+        type: "text",
         placeholder: `Enter the Name of Team Member ${num}`,
         gridSpan: 1,
+        // Not required by default - will be validated based on team size
+        required: false,
       };
     },
   );
@@ -131,6 +134,7 @@ export const createTeamDetails = (maxTeamSize: number): RegistrationStep => {
     ],
   };
 };
+
 // Common steps that can be reused
 export const COMMON_STEPS = {
   guidelines: {
@@ -224,6 +228,7 @@ export const EVENT_CONFIGS: Record<string, EventRegistrationConfig> = {
     sheetName: "VentureVault",
     fee: 100,
     description: "The Ultimate Business Plan Competition",
+    maxTeamSize: 4,
     steps: [
       createGuidelineStep(["Team of 2 to 4 Members are eligible."]),
       COMMON_STEPS.personalDetails,
@@ -238,6 +243,7 @@ export const EVENT_CONFIGS: Record<string, EventRegistrationConfig> = {
     sheetName: "BrandRevivalChallenge",
     fee: 100,
     description: "Rebuild. Reignite. Rebrand.",
+    maxTeamSize: 4, 
     steps: [
       createGuidelineStep(["Team of 2 to 4 Members are eligible."]),
       COMMON_STEPS.personalDetails,
@@ -252,6 +258,7 @@ export const EVENT_CONFIGS: Record<string, EventRegistrationConfig> = {
     sheetName: "MemeMarket",
     fee: 100,
     description: "Viral Marketing with Humor",
+    maxTeamSize: 3,
     steps: [
       createGuidelineStep(["Team of 2 to 3 Members are eligible."]),
       COMMON_STEPS.personalDetails,
@@ -266,6 +273,7 @@ export const EVENT_CONFIGS: Record<string, EventRegistrationConfig> = {
     sheetName: "TechTrek",
     fee: 100,
     description: "The Ultimate IT & Business Quiz",
+    maxTeamSize: 3,
     steps: [
       createGuidelineStep(["Team of 2 to 3 Members are eligible."]),
       COMMON_STEPS.personalDetails,
@@ -280,6 +288,7 @@ export const EVENT_CONFIGS: Record<string, EventRegistrationConfig> = {
     sheetName: "TuneTrap",
     fee: 100,
     description: "The Ultimate Musical Showdown",
+    maxTeamSize: 2,
     steps: [
       createGuidelineStep(["Team of only 2 Members are eligible."]),
       COMMON_STEPS.personalDetails,
@@ -294,6 +303,7 @@ export const EVENT_CONFIGS: Record<string, EventRegistrationConfig> = {
     sheetName: "CorporateCanvas",
     fee: 100,
     description: "Design the Future of Ads",
+    maxTeamSize: 2,
     steps: [
       createGuidelineStep(["Team of only 2 Members are eligible."]),
       COMMON_STEPS.personalDetails,

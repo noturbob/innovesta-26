@@ -5,4 +5,6 @@ export const EVENT_SHEET_MAP: { [key: string]: string } = {
   "Tech Trek": "TechTrek",
   "Tune Trap": "TuneTrap",
   "Corporate Canvas": "CorporateCanvas",
+  "Innovesta Entry": "Innovesta Entry",
+  "Josephs Entry": "Josephs Entry",
 };

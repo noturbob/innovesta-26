@@ -20,12 +20,10 @@ const STEPS = [
 ];
 
 const GAMES = [
-  "Venture Vault",
-  "Brand Revival Challenge",
-  "Meme Market",
-  "Tech Trek",
-  "Tune Trap",
-  "Corporate Canvas",
+  "Balloon Dart",
+  "Chicken Duck",
+  "Memory Game",
+  "Tower Tact",
 ]
 
 
@@ -51,6 +49,7 @@ export default function RegisterPage() {
   const [screenshot, setScreenshot] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isJosephsStudent, setIsJosephsStudent] = useState(false);
   const [errors, setErrors] = useState<ValidationErrors>({});
 
   const [formData, setFormData] = useState<RegisterFormData>({
@@ -234,6 +233,7 @@ export default function RegisterPage() {
       for (const [key, value] of Object.entries(formData)) {
         apiFormData.append(key, value);
       }
+      apiFormData.append("event", "Innovesta Entry");
       apiFormData.append("screenshot", screenshot);
 
       const response = await fetch("/api/submit-form", {
@@ -582,7 +582,7 @@ export default function RegisterPage() {
                   </div>
                   <div className="space-y-1.5 sm:space-y-2">
                     <Label className="text-sm sm:text-base">
-                      Select Event
+                      Select Your Free Game 
                     </Label>
                     <select
                       name="informalEvent"

@@ -49,7 +49,8 @@ export default function DynamicEventRegistrationPage(props: PageProps) {
         <Card className="w-full max-w-md bg-black/40 backdrop-blur-xl border-white/10 p-8 text-center relative z-10">
           <h2 className="text-2xl font-bold mb-4">Event Not Found</h2>
           <p className="text-gray-400 mb-6">
-            The event you&apos;re looking for doesn&apos;t exist or has been removed.
+            The event you&apos;re looking for doesn&apos;t exist or has been
+            removed.
           </p>
           <Button
             onClick={() => router.push("/")}
@@ -215,7 +216,7 @@ export default function DynamicEventRegistrationPage(props: PageProps) {
   };
 
   const submitForm = async (
-    e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>,
+    e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>, maxTeamSize: number
   ) => {
     e.preventDefault();
 
@@ -229,20 +230,61 @@ export default function DynamicEventRegistrationPage(props: PageProps) {
       if (!screenshot && currentStepConfig.title === "Payment") {
         throw new Error("Screenshot is required");
       }
-
+      
       const apiFormData = new FormData();
 
-      // Add event name for backend processing
+      // Add event name
       apiFormData.append("event", eventConfig.eventName);
 
-      // Add all form fields
+      // --- 1. ADD GENERAL FIELDS FIRST ---
+      // We iterate through formData but SKIP the specific fields we want to 
+      // order manually (Team data, Transaction ID)
       for (const [key, value] of Object.entries(formData)) {
+        if (
+          key === "teamSize" || 
+          key === "transactionId" || 
+          key.startsWith("teamMember")
+        ) {
+          continue; // Skip these here, we add them below in strict order
+        }
         apiFormData.append(key, value);
       }
 
+      // --- 2. ADD FIELDS IN STRICT SPREADSHEET ORDER (Columns K to P) ---
+
+      // Column K: Team Size
+      apiFormData.append("teamSize", formData.teamSize || "");
+
+      // Determine selected size to know when to send names vs empty strings
+      const teamSizeStr = formData.teamSize || "0";
+      const selectedTeamSize = parseInt(teamSizeStr.match(/\d+/)?.[0] || "1");
+
+      // Columns L, M, N: Team Members 2, 3, 4
+      // We force this loop to run up to 4 regardless of the event config.
+      // This ensures that if an event only has 2 members, Columns M and N 
+      // still get empty strings, preventing Transaction ID from shifting left.
+      for (let i = 2; i <= maxTeamSize; i++) {
+        const memberKey = `teamMember${i}`;
+        
+        if (i <= selectedTeamSize) {
+          // If member exists in selection, send name
+          apiFormData.append(memberKey, formData[memberKey] || "");
+        } else {
+          // If member is not selected (or event max size is smaller), send EMPTY
+          // This keeps the spreadsheet cell blank but preserves the column
+          apiFormData.append(memberKey, ""); 
+        }
+      }
+
+      // Column O: Transaction ID
+      apiFormData.append("transactionId", formData.transactionId || "");
+
+      // Column P: Screenshot
       if (screenshot) {
         apiFormData.append("screenshot", screenshot);
       }
+
+      // --- SUBMISSION LOGIC ---
 
       const response = await fetch("/api/submit-form", {
         method: "POST",
@@ -280,6 +322,20 @@ export default function DynamicEventRegistrationPage(props: PageProps) {
   const renderField = (field: FormField) => {
     const fieldError = errors[field.name];
     const gridSpanClass = field.gridSpan === 2 ? "col-span-2" : "col-span-1";
+
+    // Dynamic visibility for team member fields
+    if (field.name.startsWith("teamMember")) {
+      const memberNumber = parseInt(field.name.replace("teamMember", ""));
+      const selectedTeamSize = parseInt(
+        formData.teamSize?.match(/\d+/)?.[0] || "0",
+      );
+
+      // Hide fields for members beyond selected team size
+      // Team leader is member 1, so we show members 2 to selectedTeamSize
+      if (memberNumber > selectedTeamSize) {
+        return null;
+      }
+    }
 
     if (field.type === "select") {
       return (
@@ -458,14 +514,22 @@ export default function DynamicEventRegistrationPage(props: PageProps) {
                           </p>
                           <div className="relative w-48 h-48 bg-white rounded-lg p-4">
                             <Image
-                              src={currentStepConfig.paymentDetails ? currentStepConfig.paymentDetails.imagePath : "/qr-code.png"}
+                              src={
+                                currentStepConfig.paymentDetails
+                                  ? currentStepConfig.paymentDetails.imagePath
+                                  : "/qr-code.png"
+                              }
                               alt="Payment QR Code"
                               fill
                               className="object-contain"
                             />
                           </div>
                           <p className="text-xs text-pink-200/80 text-center">
-                            UPI ID: <strong>{currentStepConfig.paymentDetails?.upiId ?? "innovesta@upi"}</strong>
+                            UPI ID:{" "}
+                            <strong>
+                              {currentStepConfig.paymentDetails?.upiId ??
+                                "innovesta@upi"}
+                            </strong>
                           </p>
                         </div>
                       </div>
@@ -558,7 +622,7 @@ export default function DynamicEventRegistrationPage(props: PageProps) {
                       <Button
                         type="submit"
                         className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white min-w-[140px] disabled:opacity-50"
-                        onClick={submitForm}
+                        onClick={(e) => submitForm(e, eventConfig.maxTeamSize)}
                         disabled={isSubmitting}
                       >
                         {isSubmitting ? (
