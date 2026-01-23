@@ -138,7 +138,7 @@ export default function BrandRevivalPage() {
             <Card className="bg-gradient-to-br from-pink-500/10 to-orange-500/10 border-pink-500/30">
               <CardContent className="p-4 sm:p-6 text-center">
                 <h3 className="text-sm sm:text-lg font-semibold text-pink-200 mb-1">Registration Fee</h3>
-                <p className="text-3xl sm:text-4xl font-bold text-pink-400">₹50</p>
+                <p className="text-3xl sm:text-4xl font-bold text-pink-400">₹100</p>
                 <p className="text-xs sm:text-sm text-pink-200/60 mt-2">Per Team</p>
               </CardContent>
             </Card>

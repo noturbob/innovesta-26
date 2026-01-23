@@ -136,9 +136,9 @@ export default function TuneTrapPage() {
             {/* Prize Card */}
             <Card className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border-cyan-500/30">
               <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-semibold text-cyan-200 mb-1">Winner Prize</h3>
-                <p className="text-4xl font-bold text-cyan-400">₹10,000</p>
-                <p className="text-sm text-cyan-200/60 mt-2">+ Trophy & Certificates</p>
+                <h3 className="text-lg font-semibold text-cyan-200 mb-1">Registration Fee</h3>
+                <p className="text-4xl font-bold text-cyan-400">₹100</p>
+                <p className="text-sm text-cyan-200/60 mt-2">+ Per Team</p>
               </CardContent>
             </Card>
 

@@ -13,7 +13,7 @@ import {
   CheckCircle2, 
   Phone, 
   Trophy, 
-  Palette, // Changed to Palette for Art/Design
+  Palette, 
 } from "lucide-react";
 import { motion } from "framer-motion";
 import StarBackground from "@/components/sections/StarBackground";
@@ -52,7 +52,7 @@ export default function CorporateCanvasPage() {
                 Corporate Canvas
               </h1>
               <p className="text-xl text-gray-400 max-w-2xl">
-                Where Art Meets Business. Design compelling posters and advertisements that capture attention and drive sales.
+                Sketch fast, guess faster. A high-energy game where your drawing skills and quick thinking are the keys to victory.
               </p>
             </div>
           </div>
@@ -71,9 +71,9 @@ export default function CorporateCanvasPage() {
             {/* Quick Info Grid */}
             <div className="grid grid-cols-2 gap-4">
               <InfoCard icon={Calendar} label="Date" value="24 Jan, 2026" />
-              <InfoCard icon={Clock} label="Time" value="11:00 AM" />
-              <InfoCard icon={MapPin} label="Venue" value="Design Studio (Room 4)" />
-              <InfoCard icon={Users} label="Team Size" value="1 - 2 Members" />
+              <InfoCard icon={Clock} label="Time" value="9:00 AM - 3:00 PM" />
+              <InfoCard icon={MapPin} label="Venue" value="Room no. 103" />
+              <InfoCard icon={Users} label="Team Size" value="2 Members (Pairs)" />
             </div>
 
             {/* Event Description */}
@@ -83,21 +83,21 @@ export default function CorporateCanvasPage() {
                   <Trophy className="w-5 h-5 text-yellow-400" /> Event Structure
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Participants will be given a theme or a fictional product. Your task is to design a marketing poster or digital ad that communicates the brand value effectively.
+                  Teams play in pairs—one sketches, the other guesses. You have limited time to communicate the word solely through drawings. No speaking or writing allowed!
                 </p>
                 <div className="space-y-3 pt-2">
                   <div className="flex gap-3">
-                    <Badge variant="outline" className="border-pink-500 text-pink-400 h-fit mt-1">Round 1</Badge>
+                    <Badge variant="outline" className="border-pink-500 text-pink-400 h-fit mt-1">Gameplay</Badge>
                     <div>
-                      <h4 className="font-semibold text-white">The Sketch (Concept)</h4>
-                      <p className="text-sm text-gray-400">Design the poster using digital tools (Canva/Photoshop) or traditional art.</p>
+                      <h4 className="font-semibold text-white">Play in Pairs</h4>
+                      <p className="text-sm text-gray-400">Competing against other teams. Roles rotate every round (sketcher becomes guesser).</p>
                     </div>
                   </div>
                   <div className="flex gap-3">
-                    <Badge variant="outline" className="border-indigo-500 text-indigo-400 h-fit mt-1">Round 2</Badge>
+                    <Badge variant="outline" className="border-indigo-500 text-indigo-400 h-fit mt-1">Timer</Badge>
                     <div>
-                      <h4 className="font-semibold text-white">The Pitch (Explanation)</h4>
-                      <p className="text-sm text-gray-400">Explain your color theory, tagline choice, and target audience to judges.</p>
+                      <h4 className="font-semibold text-white">90 Seconds</h4>
+                      <p className="text-sm text-gray-400">Each round lasts 90 seconds. Draw fast and keep the energy high.</p>
                     </div>
                   </div>
                 </div>
@@ -106,14 +106,14 @@ export default function CorporateCanvasPage() {
 
             {/* Rules */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-white">Rules & Regulations</h3>
+              <h3 className="text-2xl font-bold text-white">Guidelines</h3>
               <ul className="grid gap-3">
                 {[
-                  "Participants must bring their own laptops/tablets if designing digitally.",
-                  "Drawing sheets will be provided for hand-drawn entries (bring your own colors).",
-                  "Use of AI art generators (Midjourney/DALL-E) is strictly prohibited.",
-                  "All designs must be original and created within the time limit.",
-                  "Judges will evaluate creativity, relevance to theme, and visual appeal."
+                  "Draw Only Pictures: Use only sketches to show the word.",
+                  "No letters, numbers, or symbols allowed in the drawing.",
+                  "Teams take turns; one draws, the other guesses.",
+                  "Roles rotate every round.",
+                  "Strict 90-second time limit per word."
                 ].map((rule, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-300 bg-white/5 p-3 rounded-lg border border-white/5">
                     <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
@@ -136,9 +136,9 @@ export default function CorporateCanvasPage() {
             {/* Prize Card */}
             <Card className="bg-gradient-to-br from-pink-500/10 to-indigo-500/10 border-pink-500/30">
               <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-semibold text-pink-200 mb-1">Winner Prize</h3>
-                <p className="text-4xl font-bold text-pink-400">₹8,000</p>
-                <p className="text-sm text-pink-200/60 mt-2">+ Trophy & Certificates</p>
+                <h3 className="text-lg font-semibold text-pink-200 mb-1">Registration Fee</h3>
+                <p className="text-4xl font-bold text-pink-400">₹100</p>
+                <p className="text-sm text-pink-200/60 mt-2">Per Team</p>
               </CardContent>
             </Card>
 
@@ -148,20 +148,20 @@ export default function CorporateCanvasPage() {
                 <h3 className="font-bold text-white mb-4 border-b border-white/10 pb-2">Student Coordinators</h3>
                 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-300 font-bold">DK</div>
+                  <div className="w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-300 font-bold">CB</div>
                   <div>
                     <p className="text-white font-medium">Chetan Baldava</p>
-                    <a href="tel:+919876543220" className="text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
+                    <a href="tel:+918074523025" className="text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
                       <Phone className="w-3 h-3" /> +91 8074523025
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-300 font-bold">ST</div>
+                  <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-300 font-bold">SG</div>
                   <div>
                     <p className="text-white font-medium">Saketh Gupta</p>
-                    <a href="tel:+919876543221" className="text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
+                    <a href="tel:+918125502253" className="text-sm text-gray-400 hover:text-pink-400 flex items-center gap-1">
                       <Phone className="w-3 h-3" /> +91 8125502253
                     </a>
                   </div>
@@ -187,4 +187,3 @@ export default function CorporateCanvasPage() {
     </main>
   );
 }
-

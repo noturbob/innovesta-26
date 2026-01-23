@@ -12,17 +12,17 @@ import {
   Users, 
   CheckCircle2, 
   Trophy, 
-  Target, 
+  Layers, 
 } from "lucide-react";
 import { motion } from "framer-motion";
 import StarBackground from "@/components/sections/StarBackground";
 import InfoCard from "@/components/events/InfoCard";
 
-export default function BalloonDartPage() {
+export default function TowerTactixPage() {
   return (
     <main className="min-h-screen bg-[#0f0518] text-white relative overflow-hidden">
       <StarBackground />
-      <div className="fixed top-0 right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-red-600/20 rounded-full blur-[100px] -z-10 pointer-events-none" />
+      <div className="fixed top-0 right-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-orange-600/20 rounded-full blur-[100px] -z-10 pointer-events-none" />
       <div className="fixed bottom-0 left-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-cyan-600/20 rounded-full blur-[100px] -z-10 pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10">
@@ -33,14 +33,14 @@ export default function BalloonDartPage() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8 sm:mb-12 text-center md:text-left">
           <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-center md:items-start">
             <div className="p-3 sm:p-4 bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl shrink-0">
-              <Target className="w-8 sm:w-12 h-8 sm:h-12 text-red-500" />
+              <Layers className="w-8 sm:w-12 h-8 sm:h-12 text-orange-500" />
             </div>
             <div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-red-200 to-red-500 mb-2">
-                Balloon Dart
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-200 to-cyan-500 mb-2">
+                Tower Tactix
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl">
-                Aim. Pop. Win.
+                Fast hands. Sharp focus. Perfect stacks.
               </p>
             </div>
           </div>
@@ -51,8 +51,8 @@ export default function BalloonDartPage() {
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <InfoCard icon={Calendar} label="Date" value="24 Jan, 2026" />
               <InfoCard icon={Clock} label="Time" value="11 AM - 3 PM" />
-              <InfoCard icon={MapPin} label="Venue" value="Room 403" />
-              <InfoCard icon={Users} label="Entry" value="Individual" />
+              <InfoCard icon={MapPin} label="Venue" value="Room 404" />
+              <InfoCard icon={Users} label="Player" value="Individual" />
             </div>
 
             <Card className="bg-white/5 border-white/10 backdrop-blur-md">
@@ -61,21 +61,21 @@ export default function BalloonDartPage() {
                   <Trophy className="w-4 sm:w-5 h-4 sm:h-5 text-yellow-400" /> Game Format
                 </h3>
                 <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
-                  A wall of balloons will be set up. Players must test their aim and accuracy to win.
+                  A time-based challenge where participants must stack and unstack cups in a specific pattern using only their hands.
                 </p>
                 <div className="space-y-2 sm:space-y-3 pt-2">
                   <div className="flex gap-2 sm:gap-3">
-                    <Badge variant="outline" className="border-red-500 text-red-400 h-fit mt-0.5 sm:mt-1 text-xs sm:text-sm shrink-0">Equipment</Badge>
+                    <Badge variant="outline" className="border-orange-500 text-orange-400 h-fit mt-0.5 sm:mt-1 text-xs sm:text-sm shrink-0">Task</Badge>
                     <div className="min-w-0">
-                      <h4 className="font-semibold text-white text-sm sm:text-base">5 Darts</h4>
-                      <p className="text-xs sm:text-sm text-gray-400">5 darts will be provided per player.</p>
+                      <h4 className="font-semibold text-white text-sm sm:text-base">Pattern Stacking</h4>
+                      <p className="text-xs sm:text-sm text-gray-400">Stack and unstack the cups in the given pattern.</p>
                     </div>
                   </div>
                   <div className="flex gap-2 sm:gap-3">
-                    <Badge variant="outline" className="border-cyan-500 text-cyan-400 h-fit mt-0.5 sm:mt-1 text-xs sm:text-sm shrink-0">Objective</Badge>
+                    <Badge variant="outline" className="border-cyan-500 text-cyan-400 h-fit mt-0.5 sm:mt-1 text-xs sm:text-sm shrink-0">Winning</Badge>
                     <div className="min-w-0">
-                      <h4 className="font-semibold text-white text-sm sm:text-base">Target</h4>
-                      <p className="text-xs sm:text-sm text-gray-400">Players must hit 3 consecutive balloons.</p>
+                      <h4 className="font-semibold text-white text-sm sm:text-base">Least Time</h4>
+                      <p className="text-xs sm:text-sm text-gray-400">The participant completing the task in the least time wins.</p>
                     </div>
                   </div>
                 </div>
@@ -86,10 +86,11 @@ export default function BalloonDartPage() {
               <h3 className="text-xl sm:text-2xl font-bold text-white">Rules & Regulations</h3>
               <ul className="space-y-2 sm:space-y-3">
                 {[
-                  "Players must hit 3 consecutive balloons using the darts provided.",
-                  "Entry fee: ₹50 per person.",
-                  "Inter-college participation is allowed.",
-                  "Organizers decision is final regarding hit validity."
+                  "Cups must be stacked using hands only.",
+                  "The specified stacking pattern must be followed.",
+                  "No external assistance allowed.",
+                  "Only one round will be conducted.",
+                  "Entry fee: ₹50 per player."
                 ].map((rule, i) => (
                   <li key={i} className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-gray-300 bg-white/5 p-2 sm:p-3 rounded-lg border border-white/5">
                     <CheckCircle2 className="w-4 sm:w-5 h-4 sm:h-5 text-green-500 shrink-0 mt-0.5" />
@@ -101,18 +102,18 @@ export default function BalloonDartPage() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }} className="space-y-4 sm:space-y-6">
-            <Card className="bg-gradient-to-br from-red-500/10 to-cyan-500/10 border-red-500/30">
+            <Card className="bg-gradient-to-br from-orange-500/10 to-cyan-500/10 border-orange-500/30">
               <CardContent className="p-4 sm:p-6 text-center">
-                <h3 className="text-sm sm:text-lg font-semibold text-red-200 mb-1">Entry Fee</h3>
-                <p className="text-3xl sm:text-4xl font-bold text-red-400">₹50</p>
-                <p className="text-xs sm:text-sm text-red-200/60 mt-2">Per Person</p>
+                <h3 className="text-sm sm:text-lg font-semibold text-orange-200 mb-1">Entry Fee</h3>
+                <p className="text-3xl sm:text-4xl font-bold text-orange-400">₹50</p>
+                <p className="text-xs sm:text-sm text-orange-200/60 mt-2">Per Player</p>
               </CardContent>
             </Card>
 
             <div className="w-full bg-white/5 border border-white/10 rounded-lg p-6 text-center">
               <p className="text-lg font-bold text-white mb-2">Registration</p>
               <p className="text-gray-400 text-sm mb-4">
-                This is a spot event. Please visit Room 403 to register.
+                This is a spot event. Please visit Room 404 to register.
               </p>
               <Button disabled className="w-full bg-white/10 text-gray-400 cursor-not-allowed">
                 Contact Coordinator to Register

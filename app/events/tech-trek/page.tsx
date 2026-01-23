@@ -13,7 +13,7 @@ import {
   CheckCircle2, 
   Phone, 
   Trophy, 
-  Zap, // Changed to Zap for Tech/Electricity vibe
+  Zap, 
 } from "lucide-react";
 import { motion } from "framer-motion";
 import StarBackground from "@/components/sections/StarBackground";
@@ -26,7 +26,7 @@ export default function TechTrekPage() {
       {/* Background */}
       <StarBackground />
       
-      {/* Floating Blobs (Blue/Cyan for Tech Vibe) - Responsive */}
+      {/* Floating Blobs (Blue/Cyan for Tech Vibe) */}
       <div className="fixed top-0 right-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] md:w-[500px] md:h-[500px] bg-blue-600/20 rounded-full blur-[80px] sm:blur-[100px] md:blur-[120px] -z-10 pointer-events-none" />
       <div className="fixed bottom-0 left-0 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] md:w-[500px] md:h-[500px] bg-cyan-600/20 rounded-full blur-[80px] sm:blur-[100px] md:blur-[120px] -z-10 pointer-events-none" />
 
@@ -52,7 +52,7 @@ export default function TechTrekPage() {
                 Tech Trek
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl">
-                The Ultimate IT & Business Quiz. Navigate through rounds of coding, trivia, and rapid-fire questions to prove your technical supremacy.
+                An interactive and modern tech-themed event designed as a journey through three engaging challenge rounds.
               </p>
             </div>
           </div>
@@ -73,7 +73,7 @@ export default function TechTrekPage() {
               <InfoCard icon={Calendar} label="Date" value="24 Jan, 2026" />
               <InfoCard icon={Clock} label="Time" value="01:00 PM" />
               <InfoCard icon={MapPin} label="Venue" value="Computer Lab 1" />
-              <InfoCard icon={Users} label="Team Size" value="2 Members" />
+              <InfoCard icon={Users} label="Team Size" value="2-3 Members" />
             </div>
 
             {/* Event Description */}
@@ -83,21 +83,34 @@ export default function TechTrekPage() {
                   <Trophy className="w-5 h-5 text-yellow-400" /> Event Structure
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  A multi-stage competition designed to test your knowledge of current tech trends, business tech, and logical reasoning.
+                  The word &quot;Trek&quot; signifies a guided adventure. This event represents a fun exploration through logic, memory, and decoding skills.
                 </p>
                 <div className="space-y-3 pt-2">
                   <div className="flex gap-3">
-                    <Badge variant="outline" className="border-blue-500 text-blue-400 h-fit mt-1">Round 1</Badge>
+                    <Badge variant="outline" className="border-blue-500 text-blue-400 h-fit mt-1 shrink-0">Round 1</Badge>
                     <div>
-                      <h4 className="font-semibold text-white">Binary Blitz (Written)</h4>
-                      <p className="text-sm text-gray-400">30 MCQs on IT, AI, and Business Tech in 20 minutes.</p>
+                      <h4 className="font-semibold text-white">Cipher Quest</h4>
+                      <p className="text-sm text-gray-400">
+                        A fun puzzle game cracking patterns and secret messages. Use the hint to decode the encrypted statement within 1 minute.
+                      </p>
                     </div>
                   </div>
                   <div className="flex gap-3">
-                    <Badge variant="outline" className="border-cyan-500 text-cyan-400 h-fit mt-1">Round 2</Badge>
+                    <Badge variant="outline" className="border-cyan-500 text-cyan-400 h-fit mt-1 shrink-0">Round 2</Badge>
                     <div>
-                      <h4 className="font-semibold text-white">The Debug (Finals)</h4>
-                      <p className="text-sm text-gray-400">Buzzer round involving tech trivia, logo guessing, and debugging logic.</p>
+                      <h4 className="font-semibold text-white">Byte the Word</h4>
+                      <p className="text-sm text-gray-400">
+                        A word-scramble game. Rearrange jumbled letters (e.g., &quot;OTMECUPR&quot; to &quot;COMPUTER&quot;) to form correct words within 40 seconds.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3">
+                    <Badge variant="outline" className="border-yellow-500 text-yellow-400 h-fit mt-1 shrink-0">Round 3</Badge>
+                    <div>
+                      <h4 className="font-semibold text-white">Memory Grid</h4>
+                      <p className="text-sm text-gray-400">
+                        A fast-paced match game. Teams must identify and pair technical terms with their correct definitions.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -110,14 +123,14 @@ export default function TechTrekPage() {
               <ul className="grid gap-3">
                 {[
                   "Usage of mobile phones or smartwatches is strictly prohibited during rounds.",
+                  "Teams must consist of 2-3 members.",
                   "Tie-breaker questions will be used if scores are level.",
                   "Quiz master's decision is final and binding.",
-                  "Teams must report to the venue 15 minutes prior to the start.",
                   "Any form of malpractice will lead to immediate disqualification."
                 ].map((rule, i) => (
-                  <li key={i} className="flex items-start gap-3 text-gray-300 bg-white/5 p-3 rounded-lg border border-white/5">
-                    <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
-                    {rule}
+                  <li key={i} className="flex items-start gap-3 text-sm text-gray-300 bg-white/5 p-3 rounded-lg border border-white/5">
+                    <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                    <span>{rule}</span>
                   </li>
                 ))}
               </ul>
@@ -136,9 +149,9 @@ export default function TechTrekPage() {
             {/* Prize Card */}
             <Card className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border-blue-500/30">
               <CardContent className="p-6 text-center">
-                <h3 className="text-lg font-semibold text-blue-200 mb-1">Winner Prize</h3>
-                <p className="text-4xl font-bold text-blue-400">₹10,000</p>
-                <p className="text-sm text-blue-200/60 mt-2">+ Trophy & Certificates</p>
+                <h3 className="text-lg font-semibold text-blue-200 mb-1">Registration Fee</h3>
+                <p className="text-4xl font-bold text-blue-400">₹100</p>
+                <p className="text-sm text-blue-200/60 mt-2">+ Per Team</p>
               </CardContent>
             </Card>
 
@@ -148,25 +161,35 @@ export default function TechTrekPage() {
                 <h3 className="font-bold text-white mb-4 border-b border-white/10 pb-2">Student Coordinators</h3>
                 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-300 font-bold">RM</div>
+                  <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-300 font-bold shrink-0">DP</div>
                   <div>
-                    <p className="text-white font-medium">D. Poosha</p>
-                    <a href="tel:+919876543218" className="text-sm text-gray-400 hover:text-blue-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 9182574784
+                    <p className="text-white font-medium">Komal Jain</p>
+                    <a href="tel:+919182574784" className="text-sm text-gray-400 hover:text-blue-400 flex items-center gap-1">
+                      <Phone className="w-3 h-3" /> +91 7093752948
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-300 font-bold">AL</div>
+                  <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-300 font-bold shrink-0">JJ</div>
                   <div>
-                    <p className="text-white font-medium">Joel Jeffrey</p>
-                    <a href="tel:+919876543219" className="text-sm text-gray-400 hover:text-blue-400 flex items-center gap-1">
-                      <Phone className="w-3 h-3" /> +91 8688807788
-                    </a>
+                    <p className="text-white font-medium">Zeba Zareen</p>
                   </div>
                 </div>
 
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center text-red-300 font-bold shrink-0">JJ</div>
+                  <div>
+                    <p className="text-white font-medium">Rishi</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-300 font-bold shrink-0">JJ</div>
+                  <div>
+                    <p className="text-white font-medium">Sanjana Agarwal</p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
@@ -187,4 +210,3 @@ export default function TechTrekPage() {
     </main>
   );
 }
-

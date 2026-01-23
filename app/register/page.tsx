@@ -366,6 +366,9 @@ export default function RegisterPage() {
                         Event). Extra events are ₹50 each.
                       </li>
                       <li>
+                        <b>Free</b> Entry for Josephietes just use your official college ID.
+                      </li>
+                      <li>
                         After registration, please wait for the coordinators to
                         contact you or add you to the official{" "}
                         <strong>WhatsApp Groups</strong>.
@@ -541,6 +544,9 @@ export default function RegisterPage() {
                         </option>
                         <option value="3rd Year" className="bg-black">
                           3rd Year
+                        </option>
+                        <option value="4th Year" className="bg-black">
+                          4th Year
                         </option>
                       </select>
                     </div>
