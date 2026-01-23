@@ -10,7 +10,8 @@ import {
   Clock, 
   MapPin, 
   Users, 
-  CheckCircle2, 
+  CheckCircle2,
+  Brain, 
   Trophy, 
   Grid, 
 } from "lucide-react";
@@ -33,7 +34,7 @@ export default function FlipRecallPage() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8 sm:mb-12 text-center md:text-left">
           <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-center md:items-start">
             <div className="p-3 sm:p-4 bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl shrink-0">
-              <Grid className="w-8 sm:w-12 h-8 sm:h-12 text-cyan-500" />
+              <Brain className="w-8 sm:w-12 h-8 sm:h-12 text-cyan-500" />
             </div>
             <div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-indigo-500 mb-2">

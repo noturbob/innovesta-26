@@ -11,7 +11,8 @@ import {
   MapPin, 
   Users, 
   CheckCircle2, 
-  Phone, 
+  Phone,
+  Rabbit, 
   Trophy, 
   Hash, // Changed icon to Hash for "Meme"
 } from "lucide-react";
@@ -45,7 +46,7 @@ export default function MemeMarketPage() {
         >
           <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
             <div className="p-4 bg-white/5 border border-white/10 rounded-2xl">
-              <Hash className="w-12 h-12 text-purple-500" />
+              <Rabbit className="w-12 h-12 text-purple-500" />
             </div>
             <div>
               <h1 className="text-4xl md:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-purple-500 mb-2">

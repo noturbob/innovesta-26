@@ -12,7 +12,8 @@ import {
   Users, 
   CheckCircle2, 
   Phone, 
-  Trophy, 
+  Trophy,
+  Cpu, 
   Zap, 
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -45,7 +46,7 @@ export default function TechTrekPage() {
         >
           <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-center md:items-start">
             <div className="p-3 sm:p-4 bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl shrink-0">
-              <Zap className="w-8 sm:w-12 h-8 sm:h-12 text-blue-500" />
+              <Cpu className="w-8 sm:w-12 h-8 sm:h-12 text-blue-500" />
             </div>
             <div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-200 to-blue-500 mb-2">

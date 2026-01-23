@@ -27,7 +27,8 @@ import {
   Hash,
   LucideIcon,
   Gamepad2, 
-  Target,   
+  Target,
+  Layers,   
   Ghost,    
   Grid,     
 } from "lucide-react";
@@ -389,7 +390,7 @@ export default function Home() {
               />
                 <EventItem
                 href="./games/tower-tact"
-                icon={Brain}
+                icon={Layers}
                 title="Tower Tactix"
                 desc="A time-based cup stacking challenge that tests your fast hands and sharp focus to build and unstack perfect patterns ."
                 color="group-hover:text-pink-400"
