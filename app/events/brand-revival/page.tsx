@@ -13,7 +13,6 @@ import {
   CheckCircle2, 
   Phone, 
   Trophy, 
-  Sparkles,
   Building2
 } from "lucide-react";
 import { motion } from "framer-motion";
