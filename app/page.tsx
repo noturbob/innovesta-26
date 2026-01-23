@@ -14,7 +14,6 @@ import {
   Ticket,
   Trophy,
   ArrowRight,
-  Sparkles,
   Brain,
   Rabbit,
   Building2,
@@ -22,14 +21,10 @@ import {
   ExternalLink,
   Briefcase,
   Music,
-  Zap,
   Palette,
-  Hash,
-  LucideIcon,
-  Gamepad2, 
+  LucideIcon, 
   Target,   
   Ghost,    
-  Grid,     
 } from "lucide-react";
 import { EasingDefinition, motion } from "framer-motion";
 import StarBackground from "@/components/sections/StarBackground";
@@ -85,7 +80,7 @@ export default function Home() {
               className="mb-4 sm:mb-6 space-y-1 sm:space-y-2"
             >
               <p className="text-xs sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.2em] uppercase text-purple-300 font-semibold drop-shadow-lg">
-                St. Joseph's Degree & PG College
+                St. Joseph&apos;s Degree & PG College
               </p>
               <p className="text-[0.65rem] sm:text-xs md:text-xs text-purple-400 font-mono">
                 DEPARTMENT OF BUSINESS MANAGEMENT
@@ -177,7 +172,7 @@ export default function Home() {
                       Navigate To
                     </p>
                     <p className="font-semibold text-sm">
-                      St. Joseph's Degree & PG College
+                      St. Joseph&apos;s Degree & PG College
                     </p>
                     <p className="text-xs text-gray-400">
                       King Koti Road, Hyderabad

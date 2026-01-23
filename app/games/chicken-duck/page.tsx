@@ -10,8 +10,7 @@ import {
   Clock, 
   MapPin, 
   Users, 
-  CheckCircle2, 
-  Phone, 
+  CheckCircle2,  
   Trophy, 
   Ghost, 
 } from "lucide-react";

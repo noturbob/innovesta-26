@@ -194,7 +194,7 @@ export default function TechTrekPage() {
             </Card>
 
             {/* Register Button */}
-            <Link href="/register" className="block">
+            <Link href="/register/tech-trek" className="block">
               <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white py-6 text-lg font-bold shadow-lg shadow-blue-500/25">
                 Register for Event
               </Button>

@@ -171,7 +171,7 @@ export default function TuneTrapPage() {
             </Card>
 
             {/* Register Button */}
-            <Link href="/register" className="block">
+            <Link href="/register/tune-trap" className="block">
               <Button className="w-full bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white py-6 text-lg font-bold shadow-lg shadow-cyan-500/25">
                 Register for Event
               </Button>

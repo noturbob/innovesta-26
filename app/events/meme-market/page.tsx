@@ -171,7 +171,7 @@ export default function MemeMarketPage() {
             </Card>
 
             {/* Register Button */}
-            <Link href="/register" className="block">
+            <Link href="/register/meme-market" className="block">
               <Button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-6 text-lg font-bold shadow-lg shadow-purple-500/25">
                 Register for Event
               </Button>

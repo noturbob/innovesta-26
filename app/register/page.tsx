@@ -19,7 +19,7 @@ const STEPS = [
   { id: 4, title: "Payment" },
 ];
 
-const EVENTS = [
+const GAMES = [
   "Venture Vault",
   "Brand Revival Challenge",
   "Meme Market",
@@ -37,7 +37,7 @@ export interface RegisterFormData {
   discipline: string;
   rollNumber: string;
   yearOfStudy: string;
-  event: string;
+  game: string;
   transactionId: string;
 }
 
@@ -61,7 +61,7 @@ export default function RegisterPage() {
     discipline: "BBA",
     rollNumber: "121423445",
     yearOfStudy: "1st Year",
-    event: EVENTS[0],
+    game: GAMES[0],
     transactionId: "2323q2ewqe",
   });
 
@@ -261,7 +261,7 @@ export default function RegisterPage() {
           discipline: "",
           rollNumber: "",
           yearOfStudy: "1st Year",
-          event: EVENTS[0],
+          game: GAMES[0],
           transactionId: "",
         });
         setScreenshot(null);
@@ -351,15 +351,10 @@ export default function RegisterPage() {
                       </li>
                       <li>
                         Entry Fee: <strong>₹100</strong> (Includes 1 Free
-                        Event). Extra events are ₹50 each.
+                        Game). Extra Games are ₹50 each.
                       </li>
                       <li>
                         <b>Free</b> Entry for Josephietes just use your official college ID.
-                      </li>
-                      <li>
-                        After registration, please wait for the coordinators to
-                        contact you or add you to the official{" "}
-                        <strong>WhatsApp Groups</strong>.
                       </li>
                     </ul>
                   </div>
@@ -591,11 +586,11 @@ export default function RegisterPage() {
                     </Label>
                     <select
                       name="informalEvent"
-                      value={formData.event}
+                      value={formData.game}
                       onChange={handleChange}
                       className="w-full h-9 sm:h-10 rounded-md bg-white/5 border border-white/10 px-3 text-xs sm:text-sm text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
                     >
-                      {EVENTS.map((ev) => (
+                      {GAMES.map((ev) => (
                         <option key={ev} value={ev} className="bg-black">
                           {ev}
                         </option>

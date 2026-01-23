@@ -171,7 +171,7 @@ export default function BrandRevivalPage() {
             </Card>
 
             {/* Register Button */}
-            <Link href="/register" className="block">
+            <Link href="/register/brand-revival" className="block">
               <Button className="w-full bg-gradient-to-r from-pink-600 to-orange-600 hover:from-pink-700 hover:to-orange-700 text-white py-5 sm:py-6 text-sm sm:text-lg font-bold shadow-lg shadow-pink-500/25 min-h-[44px]">
                 Register for Event
               </Button>

@@ -171,7 +171,7 @@ export default function CorporateCanvasPage() {
             </Card>
 
             {/* Register Button */}
-            <Link href="/register" className="block">
+            <Link href="/register/corporate-canvas" className="block">
               <Button className="w-full bg-gradient-to-r from-pink-600 to-indigo-600 hover:from-pink-700 hover:to-indigo-700 text-white py-6 text-lg font-bold shadow-lg shadow-pink-500/25">
                 Register for Event
               </Button>
