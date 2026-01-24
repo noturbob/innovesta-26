@@ -645,7 +645,7 @@ export default function RegisterPage() {
                       required
                       placeholder={
                         isJosephsStudent
-                          ? "121423408006@josephscollege.ac.in"
+                          ? "Hallticket@josephscollege.ac.in"
                           : "john@college.edu"
                       }
                       className={`bg-white/5 border-white/10 text-sm sm:text-base ${
