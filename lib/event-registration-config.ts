@@ -63,7 +63,7 @@ export const createPaymentDetails = (
     imagePath:
       eventType === "formal"
         ? "/formal-qr-code.jpeg"
-        : "/informal-qr-code.jpeg",
+        : "/saranya-informal-qr-code.jpeg",
     upiId:
       eventType === "formal"
         ? "nugururithikaroshini20@oksbi"
@@ -267,36 +267,36 @@ export const EVENT_CONFIGS: Record<string, EventRegistrationConfig> = {
       createPaymentDetails("informal"),
     ],
   },
-  "tech-trek": {
-    eventName: "Tech Trek",
-    eventSlug: "tech-trek",
-    sheetName: "TechTrek",
-    fee: 100,
-    description: "The Ultimate IT & Business Quiz",
-    maxTeamSize: 3,
-    steps: [
-      createGuidelineStep(["Team of 2 to 3 Members are eligible."]),
-      COMMON_STEPS.personalDetails,
-      COMMON_STEPS.academicDetails,
-      createTeamDetails(3),
-      createPaymentDetails("informal"),
-    ],
-  },
-  "tune-trap": {
-    eventName: "Tune Trap",
-    eventSlug: "tune-trap",
-    sheetName: "TuneTrap",
-    fee: 100,
-    description: "The Ultimate Musical Showdown",
-    maxTeamSize: 2,
-    steps: [
-      createGuidelineStep(["Team of only 2 Members are eligible."]),
-      COMMON_STEPS.personalDetails,
-      COMMON_STEPS.academicDetails,
-      createTeamDetails(2),
-      createPaymentDetails("informal"),
-    ],
-  },
+  // "tech-trek": {
+  //   eventName: "Tech Trek",
+  //   eventSlug: "tech-trek",
+  //   sheetName: "TechTrek",
+  //   fee: 100,
+  //   description: "The Ultimate IT & Business Quiz",
+  //   maxTeamSize: 3,
+  //   steps: [
+  //     createGuidelineStep(["Team of 2 to 3 Members are eligible."]),
+  //     COMMON_STEPS.personalDetails,
+  //     COMMON_STEPS.academicDetails,
+  //     createTeamDetails(3),
+  //     createPaymentDetails("informal"),
+  //   ],
+  // },
+  // "tune-trap": {
+  //   eventName: "Tune Trap",
+  //   eventSlug: "tune-trap",
+  //   sheetName: "TuneTrap",
+  //   fee: 100,
+  //   description: "The Ultimate Musical Showdown",
+  //   maxTeamSize: 2,
+  //   steps: [
+  //     createGuidelineStep(["Team of only 2 Members are eligible."]),
+  //     COMMON_STEPS.personalDetails,
+  //     COMMON_STEPS.academicDetails,
+  //     createTeamDetails(2),
+  //     createPaymentDetails("informal"),
+  //   ],
+  // },
   "corporate-canvas": {
     eventName: "Corporate Canvas",
     eventSlug: "corporate-canvas",
